@@ -33,7 +33,6 @@ def load_theperspective_dataset(folder_path: str):
             "perspectives": {"pro": response1, "con": response2},
             "favor_ids": [...],
             "against_ids": [...],
-            "evidence": list of doc dicts
         }
     """
     folder = Path(folder_path)
@@ -53,12 +52,6 @@ def load_theperspective_dataset(folder_path: str):
         for line in f:
             ex = json.loads(line)
 
-            # Collect evidence ids
-            evidence_ids = ex.get("favor_ids", []) + ex.get("against_ids", [])
-            evidence = [
-                {"id": eid, "content": documents.get(eid, "")} for eid in evidence_ids
-            ]
-
             entry = {
                 "id": ex.get("id"),
                 "query": ex.get("title", ""),
@@ -68,8 +61,7 @@ def load_theperspective_dataset(folder_path: str):
                     "con": ex.get("response2", [])
                 },
                 "favor_ids": ex.get("favor_ids", []),
-                "against_ids": ex.get("against_ids", []),
-                "evidence": evidence
+                "against_ids": ex.get("against_ids", [])
             }
 
             dataset.append(entry)
@@ -78,6 +70,31 @@ def load_theperspective_dataset(folder_path: str):
           f"({len(dataset)} entries, {len(documents)} documents).")
 
     return dataset
+
+def load_theperspective_evidence(folder_path: str):
+    """
+    Load evidence documents for theperspective dataset.
+
+    Returns:
+        list[dict]: Each item formatted as:
+        {
+            "id": int,
+            "content": str
+        }
+    """
+    folder = Path(folder_path)
+    doc_path = folder / "doc_new.jsonl"
+
+    evidence = []
+    with open(doc_path, "r", encoding="utf-8") as f:
+        for line in f:
+            doc = json.loads(line)
+            evidence.append({
+                "id": doc["id"],
+                "content": doc["content"]
+            })
+
+    return evidence
 
 
 def load_perspectrumx_dataset(folder_path: str):

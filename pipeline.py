@@ -3,11 +3,12 @@ import csv
 from datetime import datetime
 from pathlib import Path
 from src.utils.io import load_theperspective_dataset
+from src.utils.io import load_theperspective_evidence
 from src.retrieval.tfidf_retrieval import retrieve_local_docs
 from src.retrieval.web_retrieval import search_web
 from src.validation.entailment import check_entailment
 from src.summarization.merge import merge_documents
-from src.summarization.llm_summary import summarize_query
+# from src.summarization.llm_summary import summarize_query
 from src.evaluation.web_metrics import evaluate_all
 
 
@@ -45,32 +46,43 @@ def main():
     print(f"\nLoaded {len(dataset)} queries from {dataset_name} dataset.")
     print(f"Using top-{k} retrieval for TF-IDF and web retrieval.\n")
 
-    print(dataset)
+    # print(dataset)
+
+    # Load evidence depending on dataset
+    if dataset_name == "theperspective":
+        evidence = load_theperspective_evidence("data/theperspective")
+    else:
+        raise NotImplementedError("Perspectrumx not yet added.")
 
     # Go over each query, should be from title section for theperspective
     results = []
     for i, entry in enumerate(dataset):
         query_text = entry["query"]
         print("\n")
+        # could remove query: text
         print(f"[{i+1}/{len(dataset)}] Query: {query_text}")
         print("\n")
 
-        # TF-IDF document retrieval 
-        local_docs = retrieve_local_docs(query_text, entry["evidence"], k=k)
+        # TF-IDF document retrieval
+        local_docs = retrieve_local_docs(query_text, evidence, k=k)
+        print(len(local_docs))
+        print(local_docs)
 
         # Web retrieval
         web_docs = search_web(query_text, k=k)
 
         # Entailment and novel perspective validation
-        validated_web_docs = [
-            check_entailment(doc, entry["perspectives"]) for doc in web_docs
-        ]
+        validated_web_docs = []
+        #validated_web_docs = [
+        #   check_entailment(doc, entry["perspectives"]) for doc in web_docs
+        #]
 
         # Merge local documents + web documents
         merged_corpus = merge_documents(local_docs, validated_web_docs)
 
         # Summarization
-        summary = summarize_query(query_text, merged_corpus, entry["claims"])
+        summary = []
+        # summary = summarize_query(query_text, merged_corpus, entry["claims"])
 
         # Evaluation
         metrics = evaluate_all(summary, entry)
