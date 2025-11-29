@@ -25,6 +25,7 @@ def main():
         "--dataset",
         choices=["theperspective", "perspectrumx"],
         required=True,
+        default="theperspective",
         help="Dataset to use theperspective or perspectrumx"
     )
     parser.add_argument(
@@ -92,6 +93,8 @@ def main():
 
         # Summarization
         summary = summarize_query(query_text, local_docs, entry["claims"])
+
+        #print(f"summary:\n{summary}")
 
         # Evaluation - calculate metrics for LLM summary compared to gold data
         metrics = evaluate_all(summary, entry)
