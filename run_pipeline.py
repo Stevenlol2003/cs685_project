@@ -17,7 +17,7 @@ def main():
     # Command line arguments
     # -- dataset theperspective or perspectrumx
     # --k number for top-k, used for both TF-IDF and web retrieval
-    # usage example python pipeline.py --dataset theperspective --k 5
+    # usage example python run_pipeline.py --dataset theperspective --k 5
     parser = argparse.ArgumentParser(
         description="Web-Augmented Multi-Perspective Summarization Pipeline"
     )
@@ -54,7 +54,7 @@ def main():
 
     print(f"\nLoaded {len(dataset)} queries from {dataset_name} dataset.")
     print(f"Using top-{k} retrieval for TF-IDF and web retrieval.")
-    print(f"Saving results to: {output_file}\n")
+    print(f"Saving results to: {output_file}")
 
     # print(dataset)
 
