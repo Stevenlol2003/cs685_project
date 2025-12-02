@@ -1,144 +1,101 @@
 """
-LLM-as-Judge Evaluation Module
+LLM-as-Judge Evaluation Module (PerSphere Implementation)
 
-Evaluates multi-perspective summaries using GPT with 5 criteria (0-2 each):
-1. Claim-Perspective Alignment: Perspectives accurately reflect the claims
-2. Evidence Support: References support the corresponding perspectives  
-3. Perspective Distinctiveness: Each perspective is distinct, no overlap
-4. Query Coverage: Perspectives comprehensively cover the query topic
-5. Content Groundedness: Content is not fabricated or hallucinated
-
-Since gold summaries are not yet available, we use intrinsic quality evaluation
-where the LLM assesses internal consistency and reasonableness rather than
-comparison to a reference. This maps the original criteria as follows:
-- Criteria 1-3: Evaluated directly (claim alignment, evidence, distinctiveness)
-- Criterion 4: "Cover golden summary" → "Cover query topic comprehensively"
-- Criterion 5: "Not fabricated vs gold" → "Content appears factual/grounded"
-
-Total score: 0-10 (sum of 5 criteria, each 0-2)
+Evaluates multi-perspective summaries using the PerSphere "Gold Standard" methodology.
+Gold references are read from data.jsonl by index (same order as offline-summaries.json).
+Prompt uses Criteria 1-5 (Quality & Accuracy) per paper Section 4.6.
 """
 
 import os
 import re
+import json
 from dotenv import load_dotenv
+from openai import OpenAI
 
 load_dotenv()
 
 
-def llm_score_summary(summary: dict, reference: dict = None, model: str = "gpt-4o-mini") -> dict:
+def get_gold_reference(index: int, gold_file_path: str = "data/theperspective/data.jsonl") -> dict:
+    """Retrieves the gold reference at the given index from the JSONL file."""
+    try:
+        with open(gold_file_path, 'r', encoding='utf-8') as f:
+            for i, line in enumerate(f):
+                if i == index:
+                    item = json.loads(line.strip())
+                    return {
+                        "query": item.get("title", ""),
+                        "perspectives": [
+                            {
+                                "claim": item.get("t1", ""),
+                                "points": item.get("response1", []),
+                                "evidence_ids": item.get("favor_ids", [])
+                            },
+                            {
+                                "claim": item.get("t2", ""),
+                                "points": item.get("response2", []),
+                                "evidence_ids": item.get("against_ids", [])
+                            }
+                        ]
+                    }
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error loading gold data: {e}")
+    return None
+
+def llm_score_summary(summary: dict, index: int = None, reference: dict = None, model: str = "gpt-4o") -> dict:
     """
-    Evaluate summary quality using LLM-as-Judge.
+    Evaluate summary quality using the PerSphere Prompt (Criteria 1-5).
     
     Args:
-        summary: Summary dict with 'query' and 'perspectives' 
-        reference: Optional gold reference (for future use)
-        model: OpenAI model to use
+        summary: AI-generated summary dict with 'query' and 'perspectives'.
+        index: Index in offline-summaries.json (for matching gold reference).
+        reference: Optional gold reference; if None, retrieves by index.
+        model: OpenAI model to use.
     
     Returns:
-        dict with scores (0-2 each) and total_score (0-10)
+        dict with 'total_score' (1-10), 'explanation', and 'raw_response'.
     """
-    query = summary.get("query", "")
-    perspectives = summary.get("perspectives", [])
-    
-    if not query or not perspectives:
-        return {"error": "Invalid summary", "total_score": 0}
-    
-    # Check for malformed perspectives (prompt leakage)
-    for p in perspectives:
-        if "Generate a response in JSON format" in p.get("perspective", ""):
-            return {"error": "Malformed perspective", "total_score": 0}
-    
+    if not reference and index is not None:
+        reference = get_gold_reference(index)
+    if not reference:
+        return {"error": "Gold standard not found for this query.", "total_score": 0}
+
+    gold_str = json.dumps(reference, indent=2)
+    response_str = json.dumps(summary, indent=2)
+
+    prompt = f"""Please serve as an impartial judge and assess the quality of a summarization performed by an AI assistant. You should strictly evaluate it with the golden summarization but not your own knowledge or assumption. We will provide both the ideal summarization ("golden summarization") and the AI's response.
+
+Your evaluation should adhere to the following requirements:
+1. The perspectives generated should accurately reflect the claims.
+2. The references provided should support the corresponding perspectives.
+3. Each perspective should be distinct and free from irrelevant information or overlap with others.
+4. The perspectives should include content from the golden summarization (not necessarily all).
+5. The content of the response should not be fabricated or expanded; it should not include anything that does not appear in the golden summarization.
+
+Considering these factors, please begin your evaluation with a brief explanation, aiming for maximum objectivity. After providing your explanation, rate the response on a scale from 1 to 10, using this format: "Rating: [[number]]" (for example, "Rating: [[5]]").
+
+Golden Summarization: {gold_str}
+Response: {response_str}"""
+
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         raise ValueError("OPENAI_API_KEY not set in environment")
     
-    from openai import OpenAI
     client = OpenAI(api_key=api_key)
     
-    # Format perspectives
-    perspectives_text = ""
-    for i, p in enumerate(perspectives, 1):
-        perspectives_text += f"""
-Perspective {i}:
-- Claim: {p.get('claim', 'N/A')}
-- Perspective: {p.get('perspective', 'N/A')}
-- Evidence Document IDs: {p.get('evidence_docs', [])}
-"""
+    try:
+        completion = client.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        response_text = completion.choices[0].message.content or ""
+    except Exception as e:
+        return {"error": str(e), "total_score": 0}
 
-    prompt = f"""Please serve as an impartial judge and assess the quality of a multi-perspective summarization performed by an AI assistant.
-
-Since we do not have a gold reference summary, evaluate the summary based on its intrinsic quality. Your evaluation should adhere to the following 5 criteria, each rated on a scale from 0 to 2:
-- 0: Completely unsatisfactory
-- 1: Neutral/Partially satisfactory
-- 2: Fully satisfactory
-
-EVALUATION CRITERIA:
-
-1. **Claim-Perspective Alignment**: The perspectives generated should accurately reflect the claims. Does each perspective logically support and elaborate on its associated claim?
-
-2. **Evidence Support**: The references provided should support the corresponding perspectives. Are evidence document IDs provided, and does having references seem appropriate for each perspective?
-
-3. **Perspective Distinctiveness**: Each perspective should be distinct and free from irrelevant information or overlap with others. Are the perspectives genuinely different viewpoints without redundancy?
-
-4. **Query Coverage**: The perspectives should comprehensively cover the topic. Do the perspectives address the key aspects of the query/debate from multiple angles?
-
-5. **Content Groundedness**: The content of the response should not be fabricated or expanded beyond reason. Does the content appear factual and well-grounded rather than containing hallucinations or nonsensical claims?
-
-The sequence of perspectives does not need to match any particular order.
-Format differences are not critical criteria.
-
----
-
-QUERY: {query}
-
-RESPONSE TO EVALUATE:
-{perspectives_text}
-
----
-
-Considering these factors, please begin your evaluation with a brief explanation for each criterion, aiming for maximum objectivity. After providing your explanation, rate each criterion and provide a total score.
-
-Format your response as:
-1. **Claim-Perspective Alignment**: [Explanation] Score: [0/1/2]
-2. **Evidence Support**: [Explanation] Score: [0/1/2]
-3. **Perspective Distinctiveness**: [Explanation] Score: [0/1/2]
-4. **Query Coverage**: [Explanation] Score: [0/1/2]
-5. **Content Groundedness**: [Explanation] Score: [0/1/2]
-
-End with the total score using this format: "Rating: [[number]]" (for example, "Rating: [[7]]")
-"""
-
-    response = client.chat.completions.create(
-        model=model,
-        messages=[{"role": "user", "content": prompt}],
-    )
+    match = re.search(r"Rating:\s*\[\[(\d+)\]\]", response_text, re.IGNORECASE)
+    score = int(match.group(1)) if match else 0
     
-    response_text = response.choices[0].message.content or ""
-    
-    if not response_text:
-        return {"error": "Empty response from API", "total_score": 0, "raw_response": ""}
-    
-    # Parse scores
-    result = {"raw_response": response_text}
-    
-    patterns = [
-        ("claim_perspective_alignment", r"Claim-Perspective Alignment.*?Score:\s*(\d)"),
-        ("evidence_support", r"Evidence Support.*?Score:\s*(\d)"),
-        ("perspective_distinctiveness", r"Perspective Distinctiveness.*?Score:\s*(\d)"),
-        ("query_coverage", r"Query Coverage.*?Score:\s*(\d)"),
-        ("content_groundedness", r"Content Groundedness.*?Score:\s*(\d)"),
-    ]
-    
-    for key, pattern in patterns:
-        match = re.search(pattern, response_text, re.IGNORECASE | re.DOTALL)
-        result[key] = int(match.group(1)) if match else None
-    
-    # Extract total
-    total_match = re.search(r"Rating:\s*\[\[(\d+)\]\]", response_text)
-    if total_match:
-        result["total_score"] = int(total_match.group(1))
-    else:
-        scores = [result.get(k) for k, _ in patterns]
-        result["total_score"] = sum(s for s in scores if s is not None)
-    
-    return result
+    return {
+        "total_score": score,
+        "explanation": response_text.split("Rating:")[0].strip(),
+        "raw_response": response_text
+    }

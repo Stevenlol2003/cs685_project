@@ -38,15 +38,11 @@ def main():
         query = entry["query"]
         print(f"[{i+1}/{len(data)}] {query[:50]}...")
         
-        scores = llm_score_summary(entry["summary"], model=args.model)
+        scores = llm_score_summary(entry["summary"], index=i, model=args.model)
         
         results.append({
             "query": query,
-            "scores": {k: scores.get(k) for k in [
-                "claim_perspective_alignment", "evidence_support",
-                "perspective_distinctiveness", "query_coverage",
-                "content_groundedness", "total_score"
-            ]},
+            "scores": {k: scores.get(k) for k in ["total_score"]},
             "error": scores.get("error"),
             "raw_response": scores.get("raw_response", "")
         })
