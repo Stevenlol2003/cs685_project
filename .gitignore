@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 *.csv
+experiments/
 .venv/
 
 # Environment files (API keys)
