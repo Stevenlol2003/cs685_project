@@ -67,7 +67,7 @@ def main():
 
     # Go over each query, should be from title section for theperspective
     results = []
-    for i, entry in enumerate(dataset[:5]):
+    for i, entry in enumerate(dataset):
         query_text = entry["query"]
         print("\n")
         # could remove query: text
@@ -76,6 +76,8 @@ def main():
 
         # TF-IDF document retrieval
         local_docs = retrieve_local_docs(query_text, evidence, k=k)
+        print(len(local_docs))
+        print(local_docs)
 
         # Web retrieval
         # web_docs = search_web(query_text, k=k)
@@ -96,7 +98,9 @@ def main():
 
         # Evaluation - calculate metrics for LLM summary compared to gold data
         metrics = evaluate_all(summary, entry)
+        # Use original dataset id (e.g., "Entertainment_0") instead of loop index
         result_entry = {
+            "id": entry.get("id", i + 1),
             "query": query_text,
             "summary": summary,
             "metrics": metrics
