@@ -16,14 +16,20 @@ local_docs = retrieve_local_docs(query, evidence, k=5)
 ```
 
 ### `web_retrieval.py`
-Web document retrieval using Tavily API with caching and rate limiting.
+Web document retrieval using Tavily API with rate limiting (no on-disk cache).
 
 ```python
 from src.retrieval.web_retrieval import search_web
 
 web_docs = search_web("climate change policy", k=3)
-# Returns: list[dict] with keys: id, content, url, source_type, title, domain
-# Results cached to cache/web_results.json
+# Returns: {
+#   "num_docs": 3,
+#   "api_k": 3,          # actual max_results used (may be > k if retries bumped it)
+#   "results": [
+#       {"id": 0, "content": "...", "url": "...", "source_type": "web", "title": "...", "domain": "..."},
+#       ...
+#   ]
+# }
 ```
 
 ## Usage
@@ -55,17 +61,13 @@ TAVILY_API_KEY=tvly-your_actual_api_key
 ```
 Get your free API key from https://tavily.com
 
-### Caching
-- Results are automatically cached to `cache/web_results.json`
-- Cache key is based on query and k value
-- Clear cache with: `rm cache/web_results.json`
-
 ## Features
 
 ### Automatic Retry & Rate Limiting
 - Exponential backoff on rate limits (1s → 2s → 4s)
 - Automatic detection and retry for rate limit errors
 - Max 3 retry attempts per request
+- If fewer than k results are returned, the module increments `api_k` and retries (up to k+10)
 
 ### Error Handling
 - Missing API key: Returns empty list with logged error
@@ -73,20 +75,35 @@ Get your free API key from https://tavily.com
 - Invalid queries: Returns empty list
 - Cache errors: Auto-creates cache directory on first write
 
-## Output Format
+### Output Format
 
-Both retrieval functions return structured documents:
+- TF-IDF retrieval returns a list of documents:
 
 ```python
 {
     "id": "unique_hash_identifier",
     "content": "cleaned_document_text",
-    "url": "https://source.com",        # web only
-    "source_type": "web",
-    "title": "Document Title",
-    "domain": "source.com"              # web only
+    "source_type": "local",
+    "score": 0.87
 }
 ```
 
-Local retrieval also includes:
-- `"score"`: Cosine similarity score (0-1)
+- Web retrieval returns a dictionary with metadata and a list of documents:
+
+```python
+{
+    "num_docs": 3,          # number of docs returned (trimmed to k)
+    "api_k": 4,             # actual Tavily max_results used (may exceed k)
+    "results": [
+        {
+            "id": 0,        # zero-based within the result set
+            "content": "cleaned_document_text",
+            "url": "https://source.com",
+            "source_type": "web",
+            "title": "Document Title",
+            "domain": "source.com"
+        },
+        ...
+    ]
+}
+```

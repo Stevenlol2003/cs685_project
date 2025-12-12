@@ -5,12 +5,12 @@ from datetime import datetime
 from pathlib import Path
 from src.utils.io import load_theperspective_dataset
 from src.utils.io import load_theperspective_evidence
-from src.retrieval.tfidf_retrieval import retrieve_local_docs
-# from src.retrieval.web_retrieval import search_web
+# from src.retrieval.tfidf_retrieval import retrieve_local_docs
+from src.retrieval.web_retrieval import search_web
 # from src.validation.entailment import check_entailment
 # from src.summarization.merge import merge_documents
-from src.summarization.llm_summary import summarize_query
-from src.evaluation.web_metrics import evaluate_all
+# from src.summarization.llm_summary import summarize_query
+# from src.evaluation.web_metrics import evaluate_all
 
 
 def main():
@@ -29,15 +29,36 @@ def main():
         help="Dataset to use theperspective or perspectrumx"
     )
     parser.add_argument(
-        "--k",
+        "--offline-k",
+        type=int,
+        default=0,
+        help="Number of top offline (TF-IDF) documents to retrieve."
+    )
+    parser.add_argument(
+        "--online-k",
         type=int,
         default=5,
-        help="Number of top documents to retrieve for both TF-IDF and web retrieval."
+        help="Number of top online (web) documents to retrieve."
+    )
+    parser.add_argument(
+        "--method",
+        type=str,
+        default="tfidf",
+        help="Retrieval method label to include in filename (e.g., tfidf)."
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Limit number of queries to process (e.g., 10 for a quick test)."
     )
     args = parser.parse_args()
 
     dataset_name = args.dataset
-    k = args.k
+    offline_k = args.offline_k
+    online_k = args.online_k
+    method = args.method
+    limit = args.limit
 
     # Create results directory if it doesn't exist
     results_dir = Path("results")
@@ -45,7 +66,9 @@ def main():
 
     # Generate output filename with timestamp
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_file = results_dir / f"summary_results_{timestamp}.json"
+    output_file = results_dir / (
+        f"results-{offline_k}-offline-{online_k}-online-{method}-{timestamp}.json"
+    )
 
     # Load dataset
     if dataset_name == "theperspective":
@@ -53,17 +76,23 @@ def main():
     else:
         raise NotImplementedError("Perspectrumx not yet added.")
 
-    print(f"\nLoaded {len(dataset)} queries from {dataset_name} dataset.")
-    print(f"Using top-{k} retrieval for TF-IDF and web retrieval.")
+    total_queries = len(dataset)
+    print(f"\nLoaded {total_queries} queries from {dataset_name} dataset.")
+    print(f"Using top-{online_k} retrieval for web retrieval.")
     print(f"Saving results to: {output_file}")
 
     # print(dataset)
 
     # Load evidence depending on dataset
-    if dataset_name == "theperspective":
-        evidence = load_theperspective_evidence("data/theperspective")
-    else:
-        raise NotImplementedError("Perspectrumx not yet added.")
+    # if dataset_name == "theperspective":
+    #     evidence = load_theperspective_evidence("data/theperspective")
+    # else:
+    #     raise NotImplementedError("Perspectrumx not yet added.")
+
+    # Optionally limit dataset for quick tests
+    if limit is not None:
+        dataset = dataset[:limit]
+        print(f"Processing first {len(dataset)} queries due to --limit={limit}.")
 
     # Go over each query, should be from title section for theperspective
     results = []
@@ -75,12 +104,12 @@ def main():
         print("\n")
 
         # TF-IDF document retrieval
-        local_docs = retrieve_local_docs(query_text, evidence, k=k)
-        print(len(local_docs))
-        print(local_docs)
+        # local_docs = retrieve_local_docs(query_text, evidence, k=k)
+        # print(len(local_docs))
+        # print(local_docs)
 
         # Web retrieval
-        # web_docs = search_web(query_text, k=k)
+        web_docs = search_web(query_text, k=online_k)
 
         # Entailment and novel perspective validation
         # validated_web_docs = []
@@ -92,22 +121,20 @@ def main():
         # merged_corpus = merge_documents(local_docs, validated_web_docs)
 
         # Summarization
-        summary = summarize_query(query_text, local_docs, entry["claims"])
+        # summary = summarize_query(query_text, web_docs, entry["claims"])
 
         #print(f"summary:\n{summary}")
 
         # Evaluation - calculate metrics for LLM summary compared to gold data
-        metrics = evaluate_all(summary, entry)
-        # Use original dataset id (e.g., "Entertainment_0") instead of loop index
+        # metrics = evaluate_all(summary, entry)
+        # Store web retrieval output; 'api_k' is included within web_docs
         result_entry = {
-            "id": entry.get("id", i + 1),
             "query": query_text,
-            "summary": summary,
-            "metrics": metrics
+            "web_docs": web_docs,
         }
         results.append(result_entry)
 
-        print(f"Summary metrics: {metrics}\n")
+        # print(f"Summary metrics: {metrics}\n")
 
         # Write result to JSON file immediately (streaming to file)
         with open(output_file, 'w', encoding='utf-8') as f:
