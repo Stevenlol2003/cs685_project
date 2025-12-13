@@ -5,10 +5,11 @@ from datetime import datetime
 from pathlib import Path
 from src.utils.io import load_theperspective_dataset
 from src.utils.io import load_theperspective_evidence
-# from src.retrieval.tfidf_retrieval import retrieve_local_docs
+from src.retrieval.tfidf_retrieval import retrieve_local_docs
 from src.retrieval.web_retrieval import search_web
 # from src.validation.entailment import check_entailment
-# from src.summarization.merge import merge_documents
+from src.summarization.merge import merge_documents
+from src.summarization.merge import merge_docs_lists
 # from src.summarization.llm_summary import summarize_query
 # from src.evaluation.web_metrics import evaluate_all
 
@@ -88,10 +89,16 @@ def main():
     # print(dataset)
 
     # Load evidence depending on dataset
-    # if dataset_name == "theperspective":
-    #     evidence = load_theperspective_evidence("data/theperspective")
-    # else:
-    #     raise NotImplementedError("Perspectrumx not yet added.")
+    if dataset_name == "theperspective":
+        evidence = load_theperspective_evidence("data/theperspective")
+    else:
+        raise NotImplementedError("Perspectrumx not yet added.")
+
+    # Load valid-web data for testing
+    valid_web_path = f"data/valid-web/valid-web-{online_k}.json"
+    with open(valid_web_path, 'r', encoding='utf-8') as f:
+        valid_web_data = json.load(f)
+    web_docs_by_query = {item['query']: item['web_docs']['results'] for item in valid_web_data}
 
     # Optionally limit dataset for quick tests
     if limit is not None:
@@ -100,6 +107,7 @@ def main():
 
     # Go over each query, should be from title section for theperspective
     results = []
+    merged_results = []
     for i, entry in enumerate(dataset):
         query_text = entry["query"]
         print("\n")
@@ -108,12 +116,12 @@ def main():
         print("\n")
 
         # TF-IDF document retrieval
-        # local_docs = retrieve_local_docs(query_text, evidence, k=k)
+        local_docs = retrieve_local_docs(query_text, evidence, k=offline_k)
         # print(len(local_docs))
         # print(local_docs)
 
         # Web retrieval
-        web_docs = search_web(query_text, k=online_k)
+        web_docs = web_docs_by_query.get(query_text, [])
 
         # Entailment and novel perspective validation
         # validated_web_docs = []
@@ -122,7 +130,13 @@ def main():
         # ]
 
         # Merge local documents + web documents
-        # merged_corpus = merge_documents(local_docs, validated_web_docs)
+        merged_corpus = merge_docs_lists(local_docs, web_docs)
+
+        # Collect merged for this query
+        merged_results.append({
+            "query": query_text,
+            "merged": merged_corpus
+        })
 
         # Summarization
         # summary = summarize_query(query_text, web_docs, entry["claims"])
@@ -134,18 +148,22 @@ def main():
         # Store web retrieval output; 'api_k' is included within web_docs
         result_entry = {
             "query": query_text,
+            "local_docs": local_docs,
             "web_docs": web_docs,
+            "merged": merged_corpus,
         }
         results.append(result_entry)
 
         # print(f"Summary metrics: {metrics}\n")
 
-        # Write result to JSON file immediately (streaming to file)
-        with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(results, f, indent=2, ensure_ascii=False)
+    # Save all merged results
+    merged_file = results_dir / f"merged-{online_k}.json"
+    with open(merged_file, 'w', encoding='utf-8') as f:
+        json.dump(merged_results, f, indent=2, ensure_ascii=False)
 
     print(f"Pipeline completed")
     print(f"Results saved to: {output_file}")
+    print(f"Merged docs saved to: {merged_file}")
 
 if __name__ == "__main__":
     main()
