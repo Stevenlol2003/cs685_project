@@ -41,7 +41,7 @@ def get_gold_reference(index: int, gold_file_path: str = "data/theperspective/da
         print(f"Error loading gold data: {e}")
     return None
 
-def llm_score_summary(summary: dict, index: int = None, reference: dict = None, model: str = "gpt-4o") -> dict:
+def llm_score_summary(summary: dict, index: int = None, reference: dict = None, model: str = "gpt-5-nano-2025-08-07") -> dict:
     """
     Evaluate summary quality using the PerSphere Prompt (Criteria 1-5).
     
