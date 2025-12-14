@@ -7,6 +7,8 @@ tavily-python>=0.1.0
 torch>=2.0.0
 transformers>=4.35.0
 accelerate
+outlines>=0.0.40
+pydantic>=2.0.0
 
 # Utilities
 scikit-learn>=1.0.0

@@ -8,9 +8,9 @@ from src.utils.io import load_theperspective_evidence
 from src.retrieval.tfidf_retrieval import retrieve_local_docs
 from src.retrieval.web_retrieval import search_web
 # from src.validation.entailment import check_entailment
-from src.summarization.merge import merge_documents
+# from src.summarization.merge import merge_documents
 from src.summarization.merge import merge_docs_lists
-# from src.summarization.llm_summary import summarize_query
+from src.summarization.llm_summary import summarize_query
 # from src.evaluation.web_metrics import evaluate_all
 
 
@@ -29,7 +29,6 @@ def main():
     parser.add_argument(
         "--dataset",
         choices=["theperspective", "perspectrumx"],
-        required=True,
         default="theperspective",
         help="Dataset to use theperspective or perspectrumx"
     )
@@ -42,7 +41,7 @@ def main():
     parser.add_argument(
         "--online-k",
         type=int,
-        default=5,
+        default=0,
         help="Number of top online (web) documents to retrieve."
     )
     parser.add_argument(
@@ -94,11 +93,14 @@ def main():
     else:
         raise NotImplementedError("Perspectrumx not yet added.")
 
-    # Load valid-web data for testing
-    valid_web_path = f"data/valid-web/valid-web-{online_k}.json"
-    with open(valid_web_path, 'r', encoding='utf-8') as f:
-        valid_web_data = json.load(f)
-    web_docs_by_query = {item['query']: item['web_docs']['results'] for item in valid_web_data}
+    # Load valid-web data for testing (only if online_k > 0)
+    if online_k > 0:
+        valid_web_path = f"data/valid-web/valid-web-{online_k}.json"
+        with open(valid_web_path, 'r', encoding='utf-8') as f:
+            valid_web_data = json.load(f)
+        web_docs_by_query = {item['query']: item['web_docs']['results'] for item in valid_web_data}
+    else:
+        web_docs_by_query = {}
 
     # Optionally limit dataset for quick tests
     if limit is not None:
@@ -107,7 +109,6 @@ def main():
 
     # Go over each query, should be from title section for theperspective
     results = []
-    merged_results = []
     for i, entry in enumerate(dataset):
         query_text = entry["query"]
         print("\n")
@@ -132,38 +133,36 @@ def main():
         # Merge local documents + web documents
         merged_corpus = merge_docs_lists(local_docs, web_docs)
 
-        # Collect merged for this query
-        merged_results.append({
-            "query": query_text,
-            "merged": merged_corpus
-        })
-
         # Summarization
-        # summary = summarize_query(query_text, web_docs, entry["claims"])
+        summary = summarize_query(query_text, merged_corpus, entry["claims"])
 
-        #print(f"summary:\n{summary}")
+        print(f"summary:\n{summary}")
 
         # Evaluation - calculate metrics for LLM summary compared to gold data
         # metrics = evaluate_all(summary, entry)
-        # Store web retrieval output; 'api_k' is included within web_docs
+        # Store minimal results: id, query, summary, metrics
         result_entry = {
+            "id": entry.get("id", f"query_{i}"),
             "query": query_text,
-            "local_docs": local_docs,
-            "web_docs": web_docs,
-            "merged": merged_corpus,
+            "summary": summary,
+            "metrics": None
         }
         results.append(result_entry)
 
         # print(f"Summary metrics: {metrics}\n")
 
-    # Save all merged results
-    merged_file = results_dir / f"merged-{online_k}.json"
-    with open(merged_file, 'w', encoding='utf-8') as f:
-        json.dump(merged_results, f, indent=2, ensure_ascii=False)
+    # Save all results to output file
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(results, f, indent=2, ensure_ascii=False)
+
+    # Save all merged results (commented out - using main results file instead)
+    # merged_file = results_dir / f"merged-{online_k}.json"
+    # with open(merged_file, 'w', encoding='utf-8') as f:
+    #     json.dump(merged_results, f, indent=2, ensure_ascii=False)
 
     print(f"Pipeline completed")
     print(f"Results saved to: {output_file}")
-    print(f"Merged docs saved to: {merged_file}")
+    # print(f"Merged docs saved to: {merged_file}")
 
 if __name__ == "__main__":
     main()
