@@ -1,0 +1,920 @@
+[
+  {
+    "id": "query_0",
+    "query": "Surrealist Memes: Regression or Progression?",
+    "summary": [
+      {
+        "claim": "Surrealist memes represent progression in meme art.",
+        "perspectives": [
+          {
+            "text": "Surrealist memes are derived from a varied line of modern art traditions.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/surrealist-memes-regression-progression",
+              "https://surrealmemes.fandom.com/wiki/History_of_Surreal_Memes"
+            ]
+          },
+          {
+            "text": "Surrealist memes are an abstract and experimental approach to what futuristic memes may look like.",
+            "evidence_docs": [
+              "https://trending.knowyourmeme.com/editorials/collections/22-surreal-memes-pulled-from-an-alternate-reality"
+            ]
+          },
+          {
+            "text": "Surrealist memes are a manifestation of internet insiders' preoccupation with keeping memes out of the mainstream.",
+            "evidence_docs": [
+              "https://www.academia.edu/43639528/Meme_Artists_Standing_at_the_Intersection_of_Digital_Art_Activism_and_Trolling",
+              "https://knowyourmeme.com/editorials/white-papers/surrealist-memes-regression-or"
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Surrealist memes are a driving force in the progression of meme art.",
+        "perspectives": [
+          {
+            "text": "Surrealist memes incorporate Surrealist and Dada styles, utilizing Salvador Dali-inspired meme bases.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/surrealist-memes-regression-progression",
+              "https://surrealmemes.fandom.com/wiki/History_of_Surreal_Memes"
+            ]
+          },
+          {
+            "text": "Surrealist memes actively repel audiences by using content that will only resonate with a select group of internet insiders.",
+            "evidence_docs": [
+              "https://www.academia.edu/43639528/Meme_Artists_Standing_at_the_Intersection_of_Digital_Art_Activism_and_Trolling",
+              "https://knowyourmeme.com/editorials/white-papers/surrealist-memes-regression-or"
+            ]
+          },
+          {
+            "text": "Surrealist memes challenge their audience to accept that which cannot be easily googled, understood, and shared.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/surrealist-memes-regression-progression",
+              "https://www.instagram.com/p/DPWxQJQDhLT/"
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_1",
+    "query": "Throwback TV: Friends or Seinfeld?",
+    "summary": [
+      {
+        "claim": "Friends is the better show",
+        "perspectives": [
+          {
+            "text": "Friends is the epitome of a classic sitcom.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends",
+              "https://www.huffpost.com/entry/seinfeld-friends_n_5549028"
+            ]
+          },
+          {
+            "text": "Friends managed to appeal to a much broader audience.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends",
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976"
+            ]
+          },
+          {
+            "text": "Friends wasn’t as innovative as Seinfeld, but it took on the possibly harder task of reinventing the wheel.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends",
+              "https://www.complex.com/pop-culture/a/tracewilliamcowen/seinfeld-friends-debate-which-classic-series-is-better"
+            ]
+          },
+          {
+            "text": "Friends only has a few truly unwatchable episodes, while Seinfeld has several.",
+            "evidence_docs": [
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976",
+              "https://www.city-data.com/forum/tv/2942370-do-you-prefer-friends-seinfeld-why.html"
+            ]
+          },
+          {
+            "text": "Friends is a solid show of the era that has aged a lot worse.",
+            "evidence_docs": [
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976",
+              "https://www.cinemablend.com/television/Why-Seinfeld-Friends-Crossover-Didn-t-Happen-107217.html"
+            ]
+          },
+          {
+            "text": "Friends is the most-watched and beloved TV show of the 90s, with 43% of viewers preferring it over Seinfeld.",
+            "evidence_docs": [
+              "https://www.complex.com/pop-culture/a/tracewilliamcowen/seinfeld-friends-debate-which-classic-series-is-better",
+              "https://studyfinds.org/best-tv-shows-friends-seinfeld/"
+            ]
+          },
+          {
+            "text": "Friends is a classic sitcom that has aged better than Seinfeld.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends",
+              "https://www.huffpost.com/entry/seinfeld-friends_n_5549028"
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Seinfeld is the better show",
+        "perspectives": [
+          {
+            "text": "Seinfeld revolutionized television, which is quite impressive for a show “ about nothing.”",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends",
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976"
+            ]
+          },
+          {
+            "text": "Seinfeld made such a lasting impact by boldly and sophisticatedly turning taboo issues into comic gold.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends",
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976"
+            ]
+          },
+          {
+            "text": "Seinfeld pioneered the idea that main characters don’t have to be good or likable.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends",
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976"
+            ]
+          },
+          {
+            "text": "Seinfeld is the crowning artistic achievement of the 1990s and, for many, the greatest sitcom ever made.",
+            "evidence_docs": [
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976",
+              "https://www.cinemablend.com/television/Why-Seinfeld-Friends-Crossover-Didn-t-Happen-107217.html"
+            ]
+          },
+          {
+            "text": "Seinfeld has a rich catalogue of unique references that have made a lasting impact on pop culture.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends",
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976"
+            ]
+          },
+          {
+            "text": "Seinfeld is the most iconic sitcom of the 90s, with a record number of dramas produced in recent years.",
+            "evidence_docs": [
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976",
+              "https://www.complex.com/pop-culture/a/tracewilliamcowen/seinfeld-friends-debate-which-classic-series-is-better"
+            ]
+          },
+          {
+            "text": "Seinfeld is a groundbreaking show that has had a lasting impact on television.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends",
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976"
+            ]
+          },
+          {
+            "text": "Seinfeld is a show that has aged better than Friends.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends",
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976"
+            ]
+          },
+          {
+            "text": "Seinfeld is a show that has had a significant impact on popular culture.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends",
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976"
+            ]
+          },
+          {
+            "text": "Seinfeld is a show that has been widely acclaimed for its writing, acting, and direction.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends",
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976"
+            ]
+          },
+          {
+            "text": "Seinfeld is a show that has been widely praised for its impact on television.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends",
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976"
+            ]
+          },
+          {
+            "text": "Seinfeld is a show that has been widely regarded as one of the greatest sitcoms of all time.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends",
+              "https://www.indy100.com/showbiz/best-tv-sitcom-ever-seinfeld-friends-9071976"
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_2",
+    "query": "Should Gwyneth Paltrow be admired or criticized?",
+    "summary": [
+      {
+        "claim": "Positive claim",
+        "perspectives": [
+          {
+            "text": "Error generating summary: Unterminated string starting at: line 1 column 6923 (char 6922)",
+            "evidence_docs": [
+              352,
+              1019,
+              184
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Negative claim",
+        "perspectives": [
+          {
+            "text": "Error generating summary: Unterminated string starting at: line 1 column 6923 (char 6922)",
+            "evidence_docs": [
+              352,
+              1019,
+              184
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_3",
+    "query": "The Perspective on Reality TV",
+    "summary": [
+      {
+        "claim": "Reality TV is a reflection of society's values and priorities.",
+        "perspectives": [
+          {
+            "text": "Reality TV shows how people react to different situations and as an audience get to see how it all pans out.",
+            "evidence_docs": [
+              2957,
+              420
+            ]
+          },
+          {
+            "text": "Reality TV is a reflection of society's values and priorities, but it also perpetuates negative stereotypes and reinforces societal norms.",
+            "evidence_docs": [
+              142,
+              2202
+            ]
+          },
+          {
+            "text": "Reality TV provides a platform for everyday individuals to showcase their talents and personalities, allowing viewers to see themselves reflected on screen.",
+            "evidence_docs": [
+              420,
+              539
+            ]
+          },
+          {
+            "text": "Reality TV is a form of entertainment that caters to the lowest common denominator, prioritizing drama and conflict over substance and depth.",
+            "evidence_docs": [
+              3419,
+              172
+            ]
+          },
+          {
+            "text": "Reality TV has the power to shape our perceptions of reality and influence our attitudes towards certain groups of people.",
+            "evidence_docs": [
+              10,
+              3044
+            ]
+          },
+          {
+            "text": "Reality TV is a reflection of our society's values and priorities, but it also has the potential to educate and raise awareness about important issues.",
+            "evidence_docs": [
+              10,
+              3045
+            ]
+          },
+          {
+            "text": "Reality TV is a form of escapism that allows viewers to temporarily forget about their problems and immerse themselves in a more exciting and dramatic world.",
+            "evidence_docs": [
+              10,
+              172
+            ]
+          },
+          {
+            "text": "Reality TV is a reflection of our society's values and priorities, but it also perpetuates negative stereotypes and reinforces societal norms, particularly when it comes to issues like racism and sexism.",
+            "evidence_docs": [
+              142,
+              2202
+            ]
+          },
+          {
+            "text": "Reality TV provides a platform for marginalized groups to showcase their talents and personalities, allowing viewers to see themselves reflected on screen.",
+            "evidence_docs": [
+              420,
+              539
+            ]
+          },
+          {
+            "text": "Reality TV is a form of entertainment that caters to the lowest common denominator, prioritizing drama and conflict over substance and depth, and often perpetuating negative stereotypes and reinforcing societal norms.",
+            "evidence_docs": [
+              3419,
+              172
+            ]
+          },
+          {
+            "text": "Reality TV has the power to shape our perceptions of reality and influence our attitudes towards certain groups of people, particularly when it comes to issues like racism and sexism.",
+            "evidence_docs": [
+              10,
+              3044
+            ]
+          },
+          {
+            "text": "Reality TV is a reflection of our society's values and priorities, but it also has the potential to educate and raise awareness about important issues, such as climate change and social justice.",
+            "evidence_docs": [
+              10,
+              3045
+            ]
+          },
+          {
+            "text": "Reality TV is a form of escapism that allows viewers to temporarily forget about their problems and immerse themselves in a more exciting and dramatic world, but it can also be a source of inspiration and motivation for some viewers.",
+            "evidence_docs": [
+              10,
+              172
+            ]
+          },
+          {
+            "text": "Reality TV is a reflection of our society's values and priorities, but it also perpetuates negative stereotypes and reinforces societal norms, particularly when it comes to issues like racism and sexism, and can also be a source of inspiration and motivation for some viewers.",
+            "evidence_docs": [
+              142,
+              2202
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Reality TV is a reflection of our society's values and priorities.",
+        "perspectives": [
+          {
+            "text": "Reality TV shows how people react to different situations and as an audience get to see how it all pans out.",
+            "evidence_docs": [
+              2957,
+              420
+            ]
+          },
+          {
+            "text": "Reality TV is a reflection of our society's values and priorities, but it also perpetuates negative stereotypes and reinforces societal norms.",
+            "evidence_docs": [
+              142,
+              2202
+            ]
+          },
+          {
+            "text": "Reality TV provides a platform for everyday individuals to showcase their talents and personalities, allowing viewers to see themselves reflected on screen.",
+            "evidence_docs": [
+              420,
+              539
+            ]
+          },
+          {
+            "text": "Reality TV is a form of entertainment that caters to the lowest common denominator, prioritizing drama and conflict over substance and depth.",
+            "evidence_docs": [
+              3419,
+              172
+            ]
+          },
+          {
+            "text": "Reality TV has the power to shape our perceptions of reality and influence our attitudes towards certain groups of people.",
+            "evidence_docs": [
+              10,
+              3044
+            ]
+          },
+          {
+            "text": "Reality TV is a reflection of our society's values and priorities, but it also has the potential to educate and raise awareness about important issues.",
+            "evidence_docs": [
+              10,
+              3045
+            ]
+          },
+          {
+            "text": "Reality TV is a form of escapism that allows viewers to temporarily forget about their problems and immerse themselves in a more exciting and dramatic world.",
+            "evidence_docs": [
+              10,
+              172
+            ]
+          },
+          {
+            "text": "Reality TV is a reflection of our society's values and priorities, but it also perpetuates negative stereotypes and reinforces societal norms, particularly when it comes to issues like racism and sexism.",
+            "evidence_docs": [
+              142,
+              2202
+            ]
+          },
+          {
+            "text": "Reality TV provides a platform for marginalized groups to showcase their talents and personalities, allowing viewers to see themselves reflected on screen.",
+            "evidence_docs": [
+              420,
+              539
+            ]
+          },
+          {
+            "text": "Reality TV is a form of entertainment that caters to the lowest common denominator, prioritizing drama and conflict over substance and depth, and often perpetuating negative stereotypes and reinforcing societal norms.",
+            "evidence_docs": [
+              3419,
+              172
+            ]
+          },
+          {
+            "text": "Reality TV has the power to shape our perceptions of reality and influence our attitudes towards certain groups of people, particularly when it comes to issues like racism and sexism.",
+            "evidence_docs": [
+              10,
+              3044
+            ]
+          },
+          {
+            "text": "Reality TV is a reflection of our society's values and priorities, but it also has the potential to educate and raise awareness about important issues, such as climate change and social justice.",
+            "evidence_docs": [
+              10,
+              3045
+            ]
+          },
+          {
+            "text": "Reality TV is a form of escapism that allows viewers to temporarily forget about their problems and immerse themselves in a more exciting and dramatic world, but it can also be a source of inspiration and motivation for some viewers.",
+            "evidence_docs": [
+              10,
+              172
+            ]
+          },
+          {
+            "text": "Reality TV is a reflection of our society's values and priorities, but it also perpetuates negative stereotypes and reinforces societal norms, particularly when it comes to issues like racism and sexism, and can also be a source of inspiration and motivation for some viewers.",
+            "evidence_docs": [
+              142,
+              2202
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_4",
+    "query": "Should we Fight or Embrace Illegal Downloads?",
+    "summary": [
+      {
+        "claim": "We should embrace illegal downloads",
+        "perspectives": [
+          {
+            "text": "Netflix and Amazon Prime Video are less than $10 a month and give easy access to the most popular TV shows and movies.",
+            "evidence_docs": [
+              620,
+              870
+            ]
+          },
+          {
+            "text": "Spotify grants access to millions of songs and podcasts – for less than it costs to go out to dinner.",
+            "evidence_docs": [
+              620,
+              870
+            ]
+          },
+          {
+            "text": "Amazon Kindle books are usually less than $10, with a one-time purchase of a device that can support e-books.",
+            "evidence_docs": [
+              620,
+              870
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "We should fight illegal downloads",
+        "perspectives": [
+          {
+            "text": "File-sharers are directly responsible for damaging the music industry.",
+            "evidence_docs": [
+              3014
+            ]
+          },
+          {
+            "text": "Per Sundin, CEO of Universal Music said the decline in music revenues in the past 8 years can be fully attributed to illegal file sharing.",
+            "evidence_docs": [
+              3014
+            ]
+          },
+          {
+            "text": "Illegal immigrants cost the state in money, time and resources.",
+            "evidence_docs": [
+              1519
+            ]
+          },
+          {
+            "text": "Removing the illegal workforce would increase the number of jobs available to lawful residents.",
+            "evidence_docs": [
+              1519
+            ]
+          },
+          {
+            "text": "Swearing should be in no way illegal.",
+            "evidence_docs": [
+              3071
+            ]
+          },
+          {
+            "text": "Everyone should be entitled their own freedom of speech, and making it illegal to swear takes away from this.",
+            "evidence_docs": [
+              3071
+            ]
+          },
+          {
+            "text": "Women (and men) should be free to decide what they do with their own bodies.",
+            "evidence_docs": [
+              3597
+            ]
+          },
+          {
+            "text": "Prostitution is one of the oldest ways of making money.",
+            "evidence_docs": [
+              3597
+            ]
+          },
+          {
+            "text": "Meat is not inherently wrong.",
+            "evidence_docs": [
+              3990
+            ]
+          },
+          {
+            "text": "We should not actively practise cruelty to animals.",
+            "evidence_docs": [
+              3990
+            ]
+          },
+          {
+            "text": "If we are mature and can make our own life decisions on our own, we should be considered legal.",
+            "evidence_docs": [
+              4033
+            ]
+          },
+          {
+            "text": "There are many things we consume but can’t be measured, healthcare, national defence and education, for example.",
+            "evidence_docs": [
+              3658
+            ]
+          },
+          {
+            "text": "A direct tax is fair and progressive, because it demonstrates that we all have equal responsibility for the welfare of others.",
+            "evidence_docs": [
+              3658
+            ]
+          },
+          {
+            "text": "Mobile phones mean we are never out of contact with our friends, parents, guardians, or if necessary our school.",
+            "evidence_docs": [
+              1697
+            ]
+          },
+          {
+            "text": "We have always been superior to animals.",
+            "evidence_docs": [
+              1249
+            ]
+          },
+          {
+            "text": "It is our natural obligation to do so.",
+            "evidence_docs": [
+              1249
+            ]
+          },
+          {
+            "text": "The drinking age was set 24 years ago and has not been touched since.",
+            "evidence_docs": [
+              3629
+            ]
+          },
+          {
+            "text": "If you can’t beat them… Illegal content downloading continues to deliver a serious blow to the television and digital media industry.",
+            "evidence_docs": [
+              1801
+            ]
+          },
+          {
+            "text": "Piracy was responsible for nearly $800 billion in losses in 2014.",
+            "evidence_docs": [
+              1801
+            ]
+          },
+          {
+            "text": "Illegal downloading can lead to significant legal consequences including both civil and criminal penalties.",
+            "evidence_docs": [
+              1697
+            ]
+          },
+          {
+            "text": "While many people turn to pirated content for a cheaper or free option, there are significant hidden costs that users should be aware of before engaging in piracy.",
+            "evidence_docs": [
+              1697
+            ]
+          },
+          {
+            "text": "The Supreme Court hears a case that could trigger a big crackdown on Internet piracy.",
+            "evidence_docs": [
+              1697
+            ]
+          },
+          {
+            "text": "Cox must crack down on piracy, but question Sony’s strict demands.",
+            "evidence_docs": [
+              1697
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_5",
+    "query": "How Should We View Michael Jackson’s legacy?",
+    "summary": [
+      {
+        "claim": "Positive claim",
+        "perspectives": [
+          {
+            "text": "Error generating summary: Unterminated string starting at: line 1 column 7273 (char 7272)",
+            "evidence_docs": [
+              454,
+              961,
+              528
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Negative claim",
+        "perspectives": [
+          {
+            "text": "Error generating summary: Unterminated string starting at: line 1 column 7273 (char 7272)",
+            "evidence_docs": [
+              454,
+              961,
+              528
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_6",
+    "query": "Disney Animated Films – Are they good for children?",
+    "summary": [
+      {
+        "claim": "Disney films are good for children",
+        "perspectives": [
+          {
+            "text": "Disney films use fairytale romances and hero-villain epics as engines for social consciousness.",
+            "evidence_docs": [
+              271,
+              271
+            ]
+          },
+          {
+            "text": "Disney films encourage viewers to project emotions onto objects, promoting consumerist behavior and training children in the habits of consumerism.",
+            "evidence_docs": [
+              462,
+              462
+            ]
+          },
+          {
+            "text": "Disney films promote lessons of tolerance, showing that it can be rewarding to accept others for who they are, even if they are different.",
+            "evidence_docs": [
+              46,
+              46
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Disney films are bad for children",
+        "perspectives": [
+          {
+            "text": "Disney films promote consumerist behavior and train children in the habits of consumerism.",
+            "evidence_docs": [
+              462,
+              462
+            ]
+          },
+          {
+            "text": "Disney films often portray smoking positively without clearly demonstrating the bad effects it has.",
+            "evidence_docs": [
+              2060,
+              2060
+            ]
+          },
+          {
+            "text": "Disney films often depict culturally insensitive stereotypes, such as lazy, nonsensical monkeys or gigantic demigods.",
+            "evidence_docs": [
+              553,
+              553
+            ]
+          },
+          {
+            "text": "Disney films can have a negative influence on children, promoting violent behavior and desensitizing them to the consequences of violence.",
+            "evidence_docs": [
+              1345,
+              1345
+            ]
+          },
+          {
+            "text": "Disney films can be overly simplistic and lacking in nuance, promoting unrealistic and unexciting storylines.",
+            "evidence_docs": [
+              3280,
+              3280
+            ]
+          },
+          {
+            "text": "Disney films can be overly commercialized, promoting materialism and consumerism.",
+            "evidence_docs": [
+              1910,
+              1910
+            ]
+          },
+          {
+            "text": "Disney films can be overly focused on individualism, promoting a ",
+            "evidence_docs": [
+              3370,
+              3370
+            ]
+          },
+          {
+            "text": "Disney films can be overly simplistic and lacking in nuance, promoting unrealistic and unexciting storylines.",
+            "evidence_docs": [
+              3282,
+              3282
+            ]
+          },
+          {
+            "text": "Disney films can be overly focused on individualism, promoting a ",
+            "evidence_docs": [
+              1910,
+              1910
+            ]
+          },
+          {
+            "text": "Disney films can be overly simplistic and lacking in nuance, promoting unrealistic and unexciting storylines.",
+            "evidence_docs": [
+              1910,
+              1910
+            ]
+          },
+          {
+            "text": "Disney films can be overly focused on individualism, promoting a ",
+            "evidence_docs": [
+              1910,
+              1910
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_7",
+    "query": "(Titanic) Could Jack have been saved?",
+    "summary": [
+      {
+        "claim": "Positive claim",
+        "perspectives": [
+          {
+            "text": "Error generating summary: Unterminated string starting at: line 1 column 6754 (char 6753)",
+            "evidence_docs": [
+              331,
+              464,
+              134
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Negative claim",
+        "perspectives": [
+          {
+            "text": "Error generating summary: Unterminated string starting at: line 1 column 6754 (char 6753)",
+            "evidence_docs": [
+              331,
+              464,
+              134
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_8",
+    "query": "Which is better: Star Wars Vs. Star Trek?",
+    "summary": [
+      {
+        "claim": "Star Wars is better than Star Trek",
+        "perspectives": [
+          {
+            "text": "Star Wars made science fiction cool and approachable, inspiring countless movies to follow.",
+            "evidence_docs": [
+              810,
+              387
+            ]
+          },
+          {
+            "text": "Star Wars is a lot better than Star Trek.",
+            "evidence_docs": [
+              "SubZeroIcefire",
+              "https://www.newgrounds.com/bbs/topic/115136/1"
+            ]
+          },
+          {
+            "text": "Star Wars is just more popular, but I like Star Trek more.",
+            "evidence_docs": [
+              "axanar.com/2015/11/05/star-wars-vs-star-trek-whos-cooler/"
+            ]
+          },
+          {
+            "text": "Star Wars is a B rate scifi series with a huge budget.",
+            "evidence_docs": [
+              "dev.to/xenoxdev/starwars-vs-startrek-3h1b"
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Star Trek is better than Star Wars",
+        "perspectives": [
+          {
+            "text": "Star Trek debuted in 1966, tackling issues of gender, race, and socioeconomic differences.",
+            "evidence_docs": [
+              607,
+              3278
+            ]
+          },
+          {
+            "text": "Star Trek tries to educate its viewers about diplomacy and understanding the other side in a conflict.",
+            "evidence_docs": [
+              394
+            ]
+          },
+          {
+            "text": "Star Trek is one of my all time favorite things.",
+            "evidence_docs": [
+              "dev.to/xenoxdev/starwars-vs-startrek-3h1b"
+            ]
+          },
+          {
+            "text": "Star Trek writers at least attempted to create plausible explanations for the technology.",
+            "evidence_docs": [
+              "lynceans.org/all-posts/which-is-more-technologically-advanced-star-wars-or-star-trek/"
+            ]
+          },
+          {
+            "text": "Star Trek is more appealing than Star Wars.",
+            "evidence_docs": [
+              "https://www.jammersreviews.com/blog/startrek-vs-starwars.php"
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_9",
+    "query": "Is Binge-Watching a harmless or helpful activity?",
+    "summary": [
+      {
+        "claim": "Positive claim",
+        "perspectives": [
+          {
+            "text": "Error generating summary: Unterminated string starting at: line 1 column 6484 (char 6483)",
+            "evidence_docs": [
+              675,
+              530,
+              47
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Negative claim",
+        "perspectives": [
+          {
+            "text": "Error generating summary: Unterminated string starting at: line 1 column 6484 (char 6483)",
+            "evidence_docs": [
+              675,
+              530,
+              47
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  }
+]

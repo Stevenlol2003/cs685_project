@@ -1,0 +1,369 @@
+[
+  {
+    "id": "query_0",
+    "query": "Surrealist Memes: Regression or Progression?",
+    "summary": [
+      {
+        "claim": "Surrealist memes represent progression in meme art.",
+        "perspectives": [
+          {
+            "text": "Surrealist memes are derived from a varied line of modern art traditions.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/surrealist-memes-regression-progression"
+            ]
+          },
+          {
+            "text": "Surrealist memes represent progression in meme art.",
+            "evidence_docs": [
+              "https://www.academia.edu/43639528/Meme_Artists_Standing_at_the_Intersection_of_Digital_Art_Activism_and_Trolling"
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Surrealist memes are devoid of any distinct message.",
+        "perspectives": [
+          {
+            "text": "Art needn",
+            "evidence_docs": [
+              364
+            ]
+          },
+          {
+            "text": "The most deadening influence on art in our time is the belief that content matters more than style.",
+            "evidence_docs": [
+              364
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_1",
+    "query": "Throwback TV: Friends or Seinfeld?",
+    "summary": [
+      {
+        "claim": "Friends is the better sitcom",
+        "perspectives": [
+          {
+            "text": "Friends has resonated in a major, major way a generation later.",
+            "evidence_docs": [
+              "https://www.reddit.com/r/television/comments/zxnlep/comparing_friends_vs_seinfeld_which_do_you_think/"
+            ]
+          },
+          {
+            "text": "Netflix paid $100M to stream the series for 12 months, citing it was the second-most watched program among American viewers in 2018.",
+            "evidence_docs": [
+              1197
+            ]
+          },
+          {
+            "text": "Friends let viewers grow with its characters, evoking feelings about life's struggles.",
+            "evidence_docs": [
+              482
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Seinfeld is the better sitcom",
+        "perspectives": [
+          {
+            "text": "Seinfeld revolutionized television, making its secondary characters central to its humor.",
+            "evidence_docs": [
+              1094
+            ]
+          },
+          {
+            "text": "Seinfeld pioneered the idea of antiheroes, making audiences laugh at flawed characters.",
+            "evidence_docs": [
+              1094
+            ]
+          },
+          {
+            "text": "Seinfeld is quotable, with iconic moments like the Soup Nazi.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/seinfeld-or-friends"
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_2",
+    "query": "Should Gwyneth Paltrow be admired or criticized?",
+    "summary": [
+      {
+        "claim": "Gwyneth Paltrow should be admired for her ability to redefine modern family structures and her advocacy for women's rights.",
+        "perspectives": [
+          {
+            "text": "Paltrow successfully co-parents her children with her ex-husband Chris Martin, showcasing a positive example of conscious uncoupling.",
+            "evidence_docs": [
+              568
+            ]
+          },
+          {
+            "text": "Paltrow has spoken out against gender pay inequality in Hollywood, further demonstrating her commitment to women's rights.",
+            "evidence_docs": [
+              772
+            ]
+          },
+          {
+            "text": "Paltrow's ability to redefine modern family structures, such as her friendly co-parenting relationship with her ex-husband, is admirable.",
+            "evidence_docs": [
+              568
+            ]
+          },
+          {
+            "text": "Paltrow's advocacy for women's rights, including her support for women's empowerment and equality, is commendable.",
+            "evidence_docs": [
+              772
+            ]
+          },
+          {
+            "text": "Paltrow's commitment to women's rights, including her public speaking out against gender pay inequality, is a testament to her character.",
+            "evidence_docs": [
+              772
+            ]
+          },
+          {
+            "text": "Paltrow's ability to redefine modern family structures, such as her friendly co-parenting relationship with her ex-husband, is a positive example of conscious uncoupling.",
+            "evidence_docs": [
+              568
+            ]
+          },
+          {
+            "text": "Paltrow's advocacy for women's rights, including her support for women's empowerment and equality, is admirable.",
+            "evidence_docs": [
+              772
+            ]
+          },
+          {
+            "text": "Paltrow's commitment to women's rights, including her public speaking out against gender pay inequality, is a testament to her character.",
+            "evidence_docs": [
+              772
+            ]
+          },
+          {
+            "text": "Paltrow's ability to redefine modern family structures, such as her friendly co-parenting relationship with her ex-husband, is a positive example of conscious uncoupling.",
+            "evidence_docs": [
+              568
+            ]
+          },
+          {
+            "text": "Paltrow's advocacy for women's rights, including her support for women's empowerment and equality, is admirable.",
+            "evidence_docs": [
+              772
+            ]
+          },
+          {
+            "text": "Paltrow's commitment to women's rights, including her public speaking out against gender pay inequality, is a testament to her character.",
+            "evidence_docs": [
+              772
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Gwyneth Paltrow should not be admired for her promotion of pseudoscientific products and her lack of transparency.",
+        "perspectives": [
+          {
+            "text": "Paltrow promotes pseudo-scientific products and services, such as jade eggs and vaginal steaming, which have no scientific backing.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's promotion of pseudoscientific products and services can be misleading and potentially damaging to her followers.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's lack of transparency in her endorsement of pseudoscientific products and services is concerning.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's promotion of pseudoscientific products and services can be seen as irresponsible and potentially harmful.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's lack of transparency in her endorsement of pseudoscientific products and services is a red flag for her followers.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's promotion of pseudoscientific products and services can be seen as a form of pseudoscience itself.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's lack of transparency in her endorsement of pseudoscientific products and services is a concern for her followers' health and well-being.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's promotion of pseudoscientific products and services can be seen as a form of exploitation of her followers' gullibility.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's lack of transparency in her endorsement of pseudoscientific products and services is a red flag for her followers' trust.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's promotion of pseudoscientific products and services can be seen as a form of pseudoscience itself.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's lack of transparency in her endorsement of pseudoscientific products and services is a concern for her followers' health and well-being.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's promotion of pseudoscientific products and services can be seen as a form of exploitation of her followers' gullibility.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's lack of transparency in her endorsement of pseudoscientific products and services is a red flag for her followers' trust.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's promotion of pseudoscientific products and services can be seen as a form of pseudoscience itself.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's lack of transparency in her endorsement of pseudoscientific products and services is a concern for her followers' health and well-being.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's promotion of pseudoscientific products and services can be seen as a form of exploitation of her followers' gullibility.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's lack of transparency in her endorsement of pseudoscientific products and services is a red flag for her followers' trust.",
+            "evidence_docs": [
+              1019
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_3",
+    "query": "The Perspective on Reality TV",
+    "summary": [
+      {
+        "claim": "Reality TV has a negative impact on individuals",
+        "perspectives": [
+          {
+            "text": "Reality TV stars often experience relationship problems, divorce, and mental health issues due to the intense media scrutiny.",
+            "evidence_docs": [
+              433,
+              2202
+            ]
+          },
+          {
+            "text": "The constant exposure to unrealistic beauty standards and materialism can lead to low self-esteem and body dissatisfaction.",
+            "evidence_docs": [
+              2202,
+              3419
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Reality TV has a positive impact on individuals",
+        "perspectives": [
+          {
+            "text": "Reality TV can provide a sense of escapism and entertainment, allowing viewers to temporarily forget about their problems.",
+            "evidence_docs": [
+              3419,
+              2202
+            ]
+          },
+          {
+            "text": "Reality TV can also promote diversity and inclusion by showcasing marginalized groups and their stories.",
+            "evidence_docs": [
+              420,
+              916
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_4",
+    "query": "Should we Fight or Embrace Illegal Downloads?",
+    "summary": [
+      {
+        "claim": "We should embrace illegal downloads",
+        "perspectives": [
+          {
+            "text": "With affordable alternatives like Netflix, Amazon Prime Video, and Spotify, there's no reason to accept illegal downloads as a viable option.",
+            "evidence_docs": [
+              620,
+              870
+            ]
+          },
+          {
+            "text": "Illegal downloading is a kind of moral squalor and theft",
+            "evidence_docs": [
+              3072,
+              "https://www.theguardian.com/books/2013/sep/15/philip-pullman-illegal-downloading-theft"
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "We should fight illegal downloads",
+        "perspectives": [
+          {
+            "text": "File-sharers are directly responsible for damaging the music industry",
+            "evidence_docs": [
+              3014
+            ]
+          },
+          {
+            "text": "Illegal immigrants cost the state in money, time and resources",
+            "evidence_docs": [
+              1519
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  }
+]

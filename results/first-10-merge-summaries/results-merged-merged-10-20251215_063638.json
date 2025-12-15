@@ -1,0 +1,918 @@
+[
+  {
+    "id": "query_0",
+    "query": "Surrealist Memes: Regression or Progression?",
+    "summary": [
+      {
+        "claim": "Surrealist Memes represent progression in meme art.",
+        "perspectives": [
+          {
+            "text": "Surrealist memes are derived from a varied line of modern art traditions.",
+            "evidence_docs": [
+              "https://www.theperspective.com/debates/entertainment/surrealist-memes-regression-progression"
+            ]
+          },
+          {
+            "text": "Surrealist memes represent progression in meme art.",
+            "evidence_docs": [
+              "https://surrealmemes.fandom.com/wiki/History_of_Surreal_Memes"
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Surrealist Memes are devoid of any distinct message.",
+        "perspectives": [
+          {
+            "text": "Art needn't have a particular message in order to qualify as art, or even to qualify as good art.",
+            "evidence_docs": [
+              364
+            ]
+          },
+          {
+            "text": "The most deadening influence on art in our time is the belief that content matters more than style.",
+            "evidence_docs": [
+              364
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_1",
+    "query": "Throwback TV: Friends or Seinfeld?",
+    "summary": [
+      {
+        "claim": "Seinfeld is the better sitcom",
+        "perspectives": [
+          {
+            "text": "Seinfeld revolutionized television, making it a cultural hotbed for viewers to bond over the show.",
+            "evidence_docs": [
+              867
+            ]
+          },
+          {
+            "text": "Seinfeld's rich catalogue of unique references served as a cultural hotbed for viewers to bond with each other over the show.",
+            "evidence_docs": [
+              783
+            ]
+          },
+          {
+            "text": "Seinfeld is much more specific in its humor and more rooted in pop culture.",
+            "evidence_docs": [
+              1558
+            ]
+          },
+          {
+            "text": "Seinfeld remains one of the smartest and most unique sitcoms.",
+            "evidence_docs": [
+              1558
+            ]
+          },
+          {
+            "text": "Seinfeld's unique references gave us phrases and terms that have contributed to our modern-day vernacular.",
+            "evidence_docs": [
+              783
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Friends is the better sitcom",
+        "perspectives": [
+          {
+            "text": "Friends took on the possibly harder task of reinventing the wheel, appealing to a much broader audience.",
+            "evidence_docs": [
+              199
+            ]
+          },
+          {
+            "text": "Friends has resonated in a major, major way a generation later.",
+            "evidence_docs": [
+              1558
+            ]
+          },
+          {
+            "text": "Friends is more dear to many viewers, with a relatable premise and lovable characters.",
+            "evidence_docs": [
+              482
+            ]
+          },
+          {
+            "text": "Friends has a more positive impact on viewers, promoting socialization and self-esteem.",
+            "evidence_docs": [
+              482
+            ]
+          },
+          {
+            "text": "Friends has a more enduring legacy, remaining a quintessential classic sitcom.",
+            "evidence_docs": [
+              199
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_2",
+    "query": "Should Gwyneth Paltrow be admired or criticized?",
+    "summary": [
+      {
+        "claim": "Gwyneth Paltrow should be admired for her ability to redefine modern family structures.",
+        "perspectives": [
+          {
+            "text": "Paltrow successfully co-parents her children with her ex-husband Chris Martin, showing resilience and a commitment to amicable divorce.",
+            "evidence_docs": [
+              568,
+              772
+            ]
+          },
+          {
+            "text": "Paltrow has been a vocal advocate for women's rights and has spoken out against gender pay inequality in Hollywood.",
+            "evidence_docs": [
+              772
+            ]
+          },
+          {
+            "text": "Paltrow's ability to redefine modern family structures is admirable, as she has successfully co-parented her children with her ex-husband Chris Martin.",
+            "evidence_docs": [
+              568,
+              772
+            ]
+          },
+          {
+            "text": "Paltrow's commitment to co-parenting and her advocacy for women's rights make her a role model for many.",
+            "evidence_docs": [
+              568,
+              772
+            ]
+          },
+          {
+            "text": "Paltrow's ability to redefine modern family structures is admirable, as she has successfully co-parented her children with her ex-husband Chris Martin, and has been a vocal advocate for women's rights.",
+            "evidence_docs": [
+              568,
+              772
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Gwyneth Paltrow should not be admired for her promotion of pseudoscientific products and services through her lifestyle brand Goop.",
+        "perspectives": [
+          {
+            "text": "Paltrow has promoted products that are not backed by science and have turned out to be potentially damaging to consumers.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Goop's products are considered too expensive and lavish for the average consumer, and Paltrow's promotion of them is seen as pretentious.",
+            "evidence_docs": [
+              63
+            ]
+          },
+          {
+            "text": "Paltrow's promotion of pseudoscientific products and services through Goop has been widely criticized, with many considering them to be a scam.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's promotion of pseudoscientific products and services through Goop is a prime example of how celebrities can be exploited for their influence.",
+            "evidence_docs": [
+              63
+            ]
+          },
+          {
+            "text": "Paltrow's promotion of pseudoscientific products and services through Goop has been widely criticized, and her brand is seen as a symbol of the commercialization of wellness.",
+            "evidence_docs": [
+              1019
+            ]
+          },
+          {
+            "text": "Paltrow's promotion of pseudoscientific products and services through Goop is a prime example of how celebrities can be exploited for their influence, and has been widely criticized by experts and consumers alike.",
+            "evidence_docs": [
+              63,
+              1019
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_3",
+    "query": "The Perspective on Reality TV",
+    "summary": [
+      {
+        "claim": "Reality TV is a reflection of society's values and norms",
+        "perspectives": [
+          {
+            "text": "Reality TV shows how people react to different situations and as an audience get to see how it all pans out.",
+            "evidence_docs": [
+              2957
+            ]
+          },
+          {
+            "text": "Reality TV provides viewers with an opportunity to escape the monotony of their own lives, escape the problems and burdens of their own circumstances.",
+            "evidence_docs": [
+              202
+            ]
+          },
+          {
+            "text": "Reality TV reflects back to us the worst and sometimes best of humanity, giving us a way to understand our own actions, politics and values.",
+            "evidence_docs": [
+              "https://www.purewow.com/entertainment/why-do-people-watch-reality-tv"
+            ]
+          },
+          {
+            "text": "Reality TV is a window into other people's lives, exposing us to different values, cultures, struggles, and worldviews.",
+            "evidence_docs": [
+              "https://katecasey.substack.com/p/smart-people-watch-reality-tvand"
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Reality TV has a negative impact on society",
+        "perspectives": [
+          {
+            "text": "Reality TV shows how people react to different situations and as an audience get to see how it all pans out.",
+            "evidence_docs": [
+              2957
+            ]
+          },
+          {
+            "text": "Reality TV can give viewers an inaccurate perception of reality due to the psychological mechanisms involved.",
+            "evidence_docs": [
+              "https://washburnreview.org/42994/features/reality-tv-distorts-peoples-perception-of-true-reality/"
+            ]
+          },
+          {
+            "text": "Reality TV can lead to the glorification of negative behaviors and reinforce harmful stereotypes.",
+            "evidence_docs": [
+              "https://time.com/collection/reality-tv-most-influential-seasons/6199108/reality-tv-influence-on-world/"
+            ]
+          },
+          {
+            "text": "Reality TV can have a negative impact on viewers' mental health, particularly those who are vulnerable to its influence.",
+            "evidence_docs": [
+              "https://newsroom.clevelandclinic.org/2025/05/28/psychology-behind-reality-tv-obsession"
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_4",
+    "query": "Should we Fight or Embrace Illegal Downloads?",
+    "summary": [
+      {
+        "claim": "We should embrace illegal downloads",
+        "perspectives": [
+          {
+            "text": "According to The Perspective embracing illegal downloading could be better than fighting against it.",
+            "evidence_docs": [
+              "https://www.tutorhunt.com/resource/11330/"
+            ]
+          },
+          {
+            "text": "Instead of trying to fight against the very presence of file sharing, then, I'd like to embrace the concept in all its illegal glory and try to find some of",
+            "evidence_docs": [
+              "https://www.tutorhunt.com/resource/11330/"
+            ]
+          },
+          {
+            "text": "Downloading something which you haven't paid for is illegal.",
+            "evidence_docs": [
+              "https://www.zdnet.com/article/downloading-content-illegally-vs-getting-away-with-it/"
+            ]
+          },
+          {
+            "text": "Illegal downloading is a kind of \\",
+            "evidence_docs": [
+              "https://www.theguardian.com/books/2013/09/15/philip-pullman-illegal-downloading-theft"
+            ]
+          },
+          {
+            "text": "To throw all of this into summation, downloading something which you haven't paid for is illegal.",
+            "evidence_docs": [
+              "https://www.zdnet.com/article/downloading-content-illegally-vs-getting-away-with-it/"
+            ]
+          },
+          {
+            "text": "Illegal downloading can lead to significant legal consequences including both civil and criminal penalties.",
+            "evidence_docs": [
+              "https://leppardlaw.com/federal/white-collar/illegal-downloading-and-its-consequences-under-us-federal-law/"
+            ]
+          },
+          {
+            "text": "A recent study commissioned by Arxan indicates that piracy was responsible for nearly $800 billion in losses in 2014.",
+            "evidence_docs": [
+              "https://cmf-fmc.ca/now-next/articles/the-fight-against-illegal-downloading-if-you-cant-beat-them/"
+            ]
+          },
+          {
+            "text": "Gary Shapiro took the debate over peer-to-peer file sharing to a new level.",
+            "evidence_docs": [
+              "https://www.cnet.com/tech/tech-industry/perspective-honest-talk-about-downloads/"
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "We should fight illegal downloads",
+        "perspectives": [
+          {
+            "text": "There are too many cheap alternatives to illegal downloading to continue perpetuating the activity.",
+            "evidence_docs": [
+              620,
+              870
+            ]
+          },
+          {
+            "text": "File-sharers are directly responsible for damaging the music industry.",
+            "evidence_docs": [
+              3014
+            ]
+          },
+          {
+            "text": "Illegal immigrants cost the state in money, time and resources.",
+            "evidence_docs": [
+              1519
+            ]
+          },
+          {
+            "text": "We shouldn't give people below the age of consent access to contraception, to do so implies a tacit approval of illegal behaviour.",
+            "evidence_docs": [
+              3091
+            ]
+          },
+          {
+            "text": "Swearing should be in no way illegal.",
+            "evidence_docs": [
+              3071
+            ]
+          },
+          {
+            "text": "Women (and men) should be free to decide what they do with their own bodies.",
+            "evidence_docs": [
+              3597
+            ]
+          },
+          {
+            "text": "Meat is not inherently wrong.",
+            "evidence_docs": [
+              3990
+            ]
+          },
+          {
+            "text": "Illegal digital downloads result in billions of dollars in lost revenue annually.",
+            "evidence_docs": [
+              "https://federal-criminal.com/white-collar/the-ongoing-fight-against-illegal-digital-downloads-in-the-us/"
+            ]
+          },
+          {
+            "text": "Illegal downloading is a kind of \\",
+            "evidence_docs": [
+              "https://www.theguardian.com/books/2013/09/15/philip-pullman-illegal-downloading-theft"
+            ]
+          },
+          {
+            "text": "To throw all of this into summation, downloading something which you haven't paid for is illegal.",
+            "evidence_docs": [
+              "https://www.zdnet.com/article/downloading-content-illegally-vs-getting-away-with-it/"
+            ]
+          },
+          {
+            "text": "A recent study commissioned by Arxan indicates that piracy was responsible for nearly $800 billion in losses in 2014.",
+            "evidence_docs": [
+              "https://cmf-fmc.ca/now-next/articles/the-fight-against-illegal-downloading-if-you-cant-beat-them/"
+            ]
+          },
+          {
+            "text": "Illegal downloading can lead to significant legal consequences including both civil and criminal penalties.",
+            "evidence_docs": [
+              "https://leppardlaw.com/federal/white-collar/illegal-downloading-and-its-consequences-under-us-federal-law/"
+            ]
+          },
+          {
+            "text": "Gary Shapiro took the debate over peer-to-peer file sharing to a new level.",
+            "evidence_docs": [
+              "https://www.cnet.com/tech/tech-industry/perspective-honest-talk-about-downloads/"
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_5",
+    "query": "How Should We View Michael Jackson’s legacy?",
+    "summary": [
+      {
+        "claim": "Michael Jackson's legacy is a complex mix of both positive and negative aspects.",
+        "perspectives": [
+          {
+            "text": "Michael Jackson's legacy is a complex mix of both positive and negative aspects, with his charitable efforts and music being widely admired, but his controversies and allegations of child abuse casting a shadow over his reputation.",
+            "evidence_docs": [
+              454,
+              961,
+              528
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a testament to his innovative spirit and impact on popular culture, with his music videos and live performances continuing to inspire new generations.",
+            "evidence_docs": [
+              416,
+              1227,
+              2902
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a reflection of his impact on society, with his music and message of love and peace continuing to resonate with fans around the world.",
+            "evidence_docs": [
+              416,
+              1227,
+              2274
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a cautionary tale of the dangers of unchecked power and the importance of accountability, with his controversies and allegations of child abuse serving as a reminder of the need for greater scrutiny and oversight.",
+            "evidence_docs": [
+              528,
+              181,
+              1320
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a reminder of the importance of freedom of speech and expression, with his music and message of love and peace continuing to inspire new generations.",
+            "evidence_docs": [
+              2902,
+              1320,
+              2274
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a testament to his enduring impact on popular culture, with his music and message of love and peace continuing to inspire new generations.",
+            "evidence_docs": [
+              2902,
+              2274,
+              181
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a reflection of his impact on society, with his music and message of love and peace continuing to resonate with fans around the world.",
+            "evidence_docs": [
+              2902,
+              2274,
+              181
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Michael Jackson's legacy is a positive reflection of his impact on popular culture and society.",
+        "perspectives": [
+          {
+            "text": "Michael Jackson's legacy is a testament to his innovative spirit and impact on popular culture, with his music videos and live performances continuing to inspire new generations.",
+            "evidence_docs": [
+              416,
+              1227,
+              2902
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a reflection of his impact on society, with his music and message of love and peace continuing to resonate with fans around the world.",
+            "evidence_docs": [
+              416,
+              1227,
+              2274
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a reminder of the importance of freedom of speech and expression, with his music and message of love and peace continuing to inspire new generations.",
+            "evidence_docs": [
+              2902,
+              1320,
+              2274
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a testament to his enduring impact on popular culture, with his music and message of love and peace continuing to inspire new generations.",
+            "evidence_docs": [
+              2902,
+              2274,
+              181
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a reflection of his impact on society, with his music and message of love and peace continuing to resonate with fans around the world.",
+            "evidence_docs": [
+              2902,
+              2274,
+              181
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a positive reflection of his humanitarian efforts, with his charitable work and music continuing to inspire new generations.",
+            "evidence_docs": [
+              1227,
+              2902
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a testament to his innovative spirit and impact on popular culture, with his music videos and live performances continuing to inspire new generations.",
+            "evidence_docs": [
+              416,
+              1227,
+              2902
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a reflection of his impact on society, with his music and message of love and peace continuing to resonate with fans around the world.",
+            "evidence_docs": [
+              416,
+              1227,
+              2274
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a reminder of the importance of freedom of speech and expression, with his music and message of love and peace continuing to inspire new generations.",
+            "evidence_docs": [
+              2902,
+              1320,
+              2274
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a testament to his enduring impact on popular culture, with his music and message of love and peace continuing to inspire new generations.",
+            "evidence_docs": [
+              2902,
+              2274,
+              181
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a reflection of his impact on society, with his music and message of love and peace continuing to resonate with fans around the world.",
+            "evidence_docs": [
+              2902,
+              2274,
+              181
+            ]
+          },
+          {
+            "text": "Michael Jackson's legacy is a positive reflection of his impact on popular culture and society, with his music and message of love and peace continuing to inspire new generations.",
+            "evidence_docs": [
+              2902,
+              2274,
+              181
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_6",
+    "query": "Disney Animated Films – Are they good for children?",
+    "summary": [
+      {
+        "claim": "Disney films are good for children",
+        "perspectives": [
+          {
+            "text": "Disney films promote children's capacity for hope, an essential tool for success.",
+            "evidence_docs": [
+              459,
+              853
+            ]
+          },
+          {
+            "text": "Disney films offer their first glimpse into unfamiliar cultures, promoting cultural awareness and understanding.",
+            "evidence_docs": [
+              553
+            ]
+          },
+          {
+            "text": "Watching Disney films can be beneficial for children when it comes to understanding death and bereavement.",
+            "evidence_docs": [
+              2060
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Disney films are not good for children",
+        "perspectives": [
+          {
+            "text": "Disney films promote consumerist behavior and train children in the habits of consumerism.",
+            "evidence_docs": [
+              462,
+              672
+            ]
+          },
+          {
+            "text": "Disney films often portray smoking positively without demonstrating the negative effects, normalizing the behavior.",
+            "evidence_docs": [
+              2060
+            ]
+          },
+          {
+            "text": "Disney films often perpetuate stereotypes and insensitive depictions of cultures.",
+            "evidence_docs": [
+              553
+            ]
+          },
+          {
+            "text": "Disney films can be detrimental to children's mental health, promoting unrealistic expectations and beauty standards.",
+            "evidence_docs": [
+              1002
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_7",
+    "query": "(Titanic) Could Jack have been saved?",
+    "summary": [
+      {
+        "claim": "Jack could have been saved",
+        "perspectives": [
+          {
+            "text": "According to a 2012 episode of MythBusters, tying Rose's life jacket underneath the raft could have made it buoyant enough to support their combined weight.",
+            "evidence_docs": [
+              134
+            ]
+          },
+          {
+            "text": "However, Director James Cameron maintains that the door could not have supported both characters.",
+            "evidence_docs": [
+              464
+            ]
+          },
+          {
+            "text": "A 2016 interview with Kate Winslet also suggests that there was enough space on the door for Jack.",
+            "evidence_docs": [
+              331
+            ]
+          },
+          {
+            "text": "A forensic study confirms that the door could not have supported both characters.",
+            "evidence_docs": [
+              722
+            ]
+          },
+          {
+            "text": "But, Adam Savage of TV's MythBusters tested the waters and found that Jack could have survived by getting onto the floating door.",
+            "evidence_docs": [
+              "https://www.insideedition.com/could-jack-have-been-saved-titanic-answering-question-has-dogged-film-20-years-38543"
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Jack could not have been saved",
+        "perspectives": [
+          {
+            "text": "The script says 'Jack gets off the board and gives his place to her so she can survive', making his death inevitable.",
+            "evidence_docs": [
+              464
+            ]
+          },
+          {
+            "text": "The door was not buoyant enough to support their combined weight.",
+            "evidence_docs": [
+              722
+            ]
+          },
+          {
+            "text": "Jack's survival instinct would have led him to try again, but he would have failed.",
+            "evidence_docs": [
+              239
+            ]
+          },
+          {
+            "text": "Director James Cameron has consistently maintained that the door could not have supported both characters.",
+            "evidence_docs": [
+              464,
+              722
+            ]
+          },
+          {
+            "text": "The movie clearly shows that the door was not buoyant enough to support the weight of both of them.",
+            "evidence_docs": [
+              722
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_8",
+    "query": "Which is better: Star Wars Vs. Star Trek?",
+    "summary": [
+      {
+        "claim": "Star Wars is better than Star Trek",
+        "perspectives": [
+          {
+            "text": "Star Wars has better music and special effects.",
+            "evidence_docs": [
+              "https://billpetro.medium.com/star-wars-vs-star-trek-how-do-they-really-compare-3ef9e1db574f",
+              "https://www.facebook.com/groups/movie.talk.club/posts/1711931376248272/"
+            ]
+          },
+          {
+            "text": "Star Wars has better special effects and has advanced filmmaking.",
+            "evidence_docs": [
+              "https://www.businessinsider.com/19-reasons-why-star-wars-is-better-than-star-trek-2013-5"
+            ]
+          },
+          {
+            "text": "Star Wars is better than Star Trek.",
+            "evidence_docs": [
+              "https://www.aft.com/blog/star-wars-vs-star-trek-which-is-better"
+            ]
+          },
+          {
+            "text": "Star Wars is better than Star Trek.",
+            "evidence_docs": [
+              "https://www.reddit.com/r/startrek/comments/1aowpk3/about_star_trek_vs_star_wars/"
+            ]
+          },
+          {
+            "text": "Star Wars is better than Star Trek.",
+            "evidence_docs": [
+              "https://startrek1.quora.com/Star-Trek-vs-Star-wars-which-universe-wins"
+            ]
+          },
+          {
+            "text": "Star Wars is better than Star Trek.",
+            "evidence_docs": [
+              "https://lrmonline.com/news/it-took-me-23-years-to-learn-star-trek-is-better-than-star-wars-come-me-bro/"
+            ]
+          },
+          {
+            "text": "Star Wars is better than Star Trek.",
+            "evidence_docs": [
+              "https://www.quora.com/Do-most-people-prefer-Star-Wars-or-Star-Trek"
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Star Trek is better than Star Wars",
+        "perspectives": [
+          {
+            "text": "Star Trek has better characterization and technology.",
+            "evidence_docs": [
+              "https://billpetro.medium.com/star-wars-vs-star-trek-how-do-they-really-compare-3ef9e1db574f",
+              "https://www.facebook.com/groups/movie.talk.club/posts/1711931376248272/"
+            ]
+          },
+          {
+            "text": "Star Trek has better technology.",
+            "evidence_docs": [
+              "https://www.businessinsider.com/19-reasons-why-star-wars-is-better-than-star-trek-2013-5"
+            ]
+          },
+          {
+            "text": "Star Trek is better than Star Wars.",
+            "evidence_docs": [
+              "https://www.aft.com/blog/star-wars-vs-star-trek-which-is-better"
+            ]
+          },
+          {
+            "text": "Star Trek is better than Star Wars.",
+            "evidence_docs": [
+              "https://www.reddit.com/r/startrek/comments/1aowpk3/about_star_trek_vs_star_wars/"
+            ]
+          },
+          {
+            "text": "Star Trek is better than Star Trek.",
+            "evidence_docs": [
+              "https://startrek1.quora.com/Star-Trek-vs-Star-wars-which-universe-wins"
+            ]
+          },
+          {
+            "text": "Star Trek is better than Star Trek.",
+            "evidence_docs": [
+              "https://lrmonline.com/news/it-took-me-23-years-to-learn-star-trek-is-better-than-star-wars-come-me-bro/"
+            ]
+          },
+          {
+            "text": "Star Trek is better than Star Trek.",
+            "evidence_docs": [
+              "https://www.quora.com/Do-most-people-prefer-Star-Wars-or-Star-Trek"
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  },
+  {
+    "id": "query_9",
+    "query": "Is Binge-Watching a harmless or helpful activity?",
+    "summary": [
+      {
+        "claim": "Binge-watching is harmless.",
+        "perspectives": [
+          {
+            "text": "Binge-watching releases dopamine, a feel-good chemical, in the brain.",
+            "evidence_docs": [
+              675
+            ]
+          },
+          {
+            "text": "Binge-watching provides an enjoyable way to immerse yourself in a specific TV show.",
+            "evidence_docs": [
+              878
+            ]
+          },
+          {
+            "text": "Binge-watching is a cost-free, recreational activity that can be done at any time.",
+            "evidence_docs": [
+              "https://paths.care/resources/binge-watching-how-your-brain-functions-during-a-tv-series-marathon/"
+            ]
+          }
+        ]
+      },
+      {
+        "claim": "Binge-watching is harmful.",
+        "perspectives": [
+          {
+            "text": "Binge-watching is linked to poor sleep quality, fatigue, and insomnia.",
+            "evidence_docs": [
+              530
+            ]
+          },
+          {
+            "text": "Binge-watching can lead to binge-eating, sedentary habits, and an early death.",
+            "evidence_docs": [
+              530
+            ]
+          },
+          {
+            "text": "Binge-watching can contribute to social isolation and decreased physical activity.",
+            "evidence_docs": [
+              716
+            ]
+          },
+          {
+            "text": "Binge-watching can lead to decreased attention span and increased risk of depression.",
+            "evidence_docs": [
+              530,
+              2418
+            ]
+          },
+          {
+            "text": "Binge-watching can lead to decreased physical activity and increased risk of heart disease.",
+            "evidence_docs": [
+              530,
+              2418
+            ]
+          },
+          {
+            "text": "Binge-watching can lead to decreased attention span and increased risk of depression.",
+            "evidence_docs": [
+              2418
+            ]
+          },
+          {
+            "text": "Binge-watching can lead to decreased physical activity and increased risk of heart disease.",
+            "evidence_docs": [
+              2418
+            ]
+          },
+          {
+            "text": "Binge-watching can lead to decreased attention span and increased risk of depression.",
+            "evidence_docs": [
+              2418
+            ]
+          },
+          {
+            "text": "Binge-watching can lead to decreased physical activity and increased risk of heart disease.",
+            "evidence_docs": [
+              2418
+            ]
+          }
+        ]
+      }
+    ],
+    "metrics": null
+  }
+]

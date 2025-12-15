@@ -10,18 +10,19 @@ from src.retrieval.tfidf_retrieval import retrieve_local_docs
 # from src.summarization.merge import merge_documents
 from src.summarization.merge import merge_docs_lists
 from src.summarization.llm_summary import summarize_query
+from src.summarization.llm_summary_merged import summarize_query as summarize_query_merged
 # from src.evaluation.web_metrics import evaluate_all
 
 
 def main():
-    # Command line arguments (examples):
-    #   --dataset theperspective --offline-k 0 --online-k 10 --method tfidf --limit 10
-    # Flags:
-    #   --dataset   : theperspective | perspectrumx (perspectrumx not yet implemented)
-    #   --offline-k : top-k offline (TF-IDF) docs (currently unused in pipeline)
-    #   --online-k  : top-k web docs to retrieve via Tavily
-    #   --method    : label baked into result filename (e.g., tfidf)
-    #   --limit     : truncate dataset for quick tests
+    # Two entry points:
+    # 1) Standard pipeline (offline/web retrieval + summarization):
+    #    python run_pipeline.py --dataset theperspective --offline-k 0 --online-k 10 --method tfidf --limit 5
+    #    -> uses llm_summary.py with integer doc IDs from offline corpus and Tavily web docs
+    # 2) Merged-corpus pipeline (no retrieval, premerged docs with URL/str IDs):
+    #    python run_pipeline.py --merged-file results/merged-5.json --limit 5
+    #    -> uses llm_summary_merged.py which accepts mixed int/str IDs (e.g., URLs)
+    # GPU + HF_TOKEN are still required for either mode; merged mode simply bypasses retrieval.
     parser = argparse.ArgumentParser(
         description="Web-Augmented Multi-Perspective Summarization Pipeline"
     )
@@ -55,6 +56,12 @@ def main():
         default=None,
         help="Limit number of queries to process (e.g., 10 for a quick test)."
     )
+    parser.add_argument(
+        "--merged-file",
+        type=str,
+        default=None,
+        help="Optional path to a pre-merged corpus JSON (e.g., results/merged-5.json)."
+    )
     args = parser.parse_args()
 
     dataset_name = args.dataset
@@ -62,6 +69,7 @@ def main():
     online_k = args.online_k
     method = args.method
     limit = args.limit
+    merged_file = args.merged_file
 
     # Create results directory if it doesn't exist
     results_dir = Path("results")
@@ -69,6 +77,51 @@ def main():
 
     # Generate output filename with timestamp
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+    # If a merged corpus is provided, skip retrieval and summarize directly
+    if merged_file:
+        merged_path = Path(merged_file)
+        with open(merged_path, 'r', encoding='utf-8') as f:
+            merged_data = json.load(f)
+
+        if limit is not None:
+            merged_data = merged_data[:limit]
+            print(f"Processing first {len(merged_data)} merged queries due to --limit={limit}.")
+
+        output_file = results_dir / (
+            f"results-merged-{merged_path.stem}-{timestamp}.json"
+        )
+
+        print(f"\nLoaded {len(merged_data)} queries from merged corpus: {merged_path}")
+        print(f"Saving results to: {output_file}")
+
+        results = []
+        for i, entry in enumerate(merged_data):
+            query_text = entry.get("query", "")
+            merged_corpus = entry.get("merged") or entry.get("docs") or []
+
+            print("\n")
+            print(f"[{i+1}/{len(merged_data)}] Query: {query_text}")
+            print("\n")
+
+            summary = summarize_query_merged(query_text, merged_corpus)
+            print(f"summary:\n{summary}")
+
+            result_entry = {
+                "id": entry.get("id", f"query_{i}"),
+                "query": query_text,
+                "summary": summary,
+                "metrics": None
+            }
+            results.append(result_entry)
+
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(results, f, indent=2, ensure_ascii=False)
+
+        print(f"Pipeline completed (merged corpus mode)")
+        print(f"Results saved to: {output_file}")
+        return
+
     output_file = results_dir / (
         f"results-{offline_k}-offline-{online_k}-online-{method}-{timestamp}.json"
     )
@@ -165,3 +218,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
