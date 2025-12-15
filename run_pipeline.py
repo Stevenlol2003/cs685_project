@@ -89,7 +89,7 @@ def main():
             print(f"Processing first {len(merged_data)} merged queries due to --limit={limit}.")
 
         output_file = results_dir / (
-            f"results-merged-{merged_path.stem}-{timestamp}.json"
+            f"results-{merged_path.stem}-{timestamp}.json"
         )
 
         print(f"\nLoaded {len(merged_data)} queries from merged corpus: {merged_path}")
