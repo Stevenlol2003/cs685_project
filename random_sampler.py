@@ -7,9 +7,9 @@ RANDOM_SEED = 10
 RELEVANCE_SAMPLE_SIZE = 30
 SUMMARY_SAMPLE_SIZE = 20
 
-INPUT_JSON = "data/valid-queries/valid-k-10-queries-20251216_202817.json"
-RELEVANCE_OUT = "relevance_eval_30.json"
-SUMMARY_OUT = "summary_eval_20.json"
+INPUT_JSON = "data/valid-queries/valid-k-10-queries-20251216_210630.json"
+RELEVANCE_OUT = "data/valid-queries/relevance_eval_30.json"
+SUMMARY_OUT = "data/valid-queries/summary_eval_20.json"
 
 def extract_topic(id_offline: str) -> str:
     """
