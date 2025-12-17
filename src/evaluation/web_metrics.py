@@ -2,7 +2,6 @@ import json
 import os
 import numpy as np
 import statistics
-from collections import defaultdict
 
 """
 Calculate web metrics:
@@ -45,7 +44,7 @@ def count_tokens(text):
 
 def compute_metrics(k):
     # Load valid-web data
-    valid_web_path = f"data/valid-web/valid-web-{k}.json"
+    valid_web_path = f"../../data/valid-web/valid-web-{k}.json"
     with open(valid_web_path, 'r', encoding='utf-8') as f:
         valid_data = json.load(f)
     
@@ -59,7 +58,7 @@ def compute_metrics(k):
         relevance_rates.append(relevant_count / k)
     
     # Load merged data
-    merged_path = f"data/merged-corpus/merged-{k}.json"
+    merged_path = f"../../data/merged-corpus/merged-{k}.json"
     with open(merged_path, 'r', encoding='utf-8') as f:
         merged_data = json.load(f)
     
@@ -118,7 +117,7 @@ def main():
                 )
 
     # Save to file
-    output_path = "web_metrics_results.json"
+    output_path = "../../results/evaluation/web-metrics/web_metrics_results.json"
     with open(output_path, 'w') as f:
         json.dump(results, f, indent=2)
     print(f"Results saved to {output_path}")
