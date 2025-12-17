@@ -113,11 +113,15 @@ def find_valid_queries_merged(merged_file: str) -> List[Dict]:
     return valid_queries
 
 
-def find_intersection(offline_file: str, merged_file: str) -> List[Dict]:
+def find_intersection(offline_file: str, merged_file: str, deduplicate: bool = True) -> List[Dict]:
     """
     Find queries that are valid (non-error) in BOTH offline and merged files.
-    Includes all duplicates - if a query appears multiple times and all instances
-    are valid, all pairs are included.
+    
+    Args:
+        offline_file: Path to offline summaries file
+        merged_file: Path to merged summaries file
+        deduplicate: If True, only keep one instance of each duplicate query string.
+                    If False, includes all duplicates (original behavior).
     
     Returns:
         List of dicts with id_offline, id_merged, and query fields
@@ -137,17 +141,29 @@ def find_intersection(offline_file: str, merged_file: str) -> List[Dict]:
     for entry in valid_merged:
         merged_by_query[entry["query"]].append(entry["id_merged"])
     
-    # Find all valid pairs (including duplicates)
+    # Find all valid pairs
     intersection = []
     all_queries = set(offline_by_query.keys()) & set(merged_by_query.keys())
     
+    # Track seen queries if deduplicating
+    seen_queries = set() if deduplicate else None
+    
     for query_text in all_queries:
+        # Skip if we've already seen this query and deduplicating
+        if deduplicate and query_text in seen_queries:
+            continue
+        
         offline_ids = offline_by_query[query_text]
         merged_ids = merged_by_query[query_text]
         
-        # Create pairs - only create as many pairs as the minimum count
-        # This ensures we only pair entries that actually exist in both files
-        num_pairs = min(len(offline_ids), len(merged_ids))
+        # Only take the first pair if deduplicating, otherwise take all pairs
+        if deduplicate:
+            num_pairs = 1
+            seen_queries.add(query_text)
+        else:
+            # Create pairs - only create as many pairs as the minimum count
+            # This ensures we only pair entries that actually exist in both files
+            num_pairs = min(len(offline_ids), len(merged_ids))
         
         for i in range(num_pairs):
             offline_id = offline_ids[i]
@@ -168,11 +184,11 @@ def main():
     offline_file = "results/offline-summaries-JSON-enforced/results-10-offline-0-online-tfidf-20251214_222854.json"
     merged_file = "results/merged-summaries/results-merged-10-20251215_082353.json"
     
-    # Find intersection of valid queries
+    # Find intersection of valid queries (deduplicated by default)
     print("Loading offline summaries...")
-    valid_queries = find_intersection(offline_file, merged_file)
+    valid_queries = find_intersection(offline_file, merged_file, deduplicate=True)
     
-    print(f"Found {len(valid_queries)} queries that are valid in both files")
+    print(f"Found {len(valid_queries)} unique queries that are valid in both files")
     
     # Create output directory if it doesn't exist
     output_dir = "data/valid-queries"
