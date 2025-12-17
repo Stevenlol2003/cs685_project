@@ -24,67 +24,36 @@
 - **Average documents per query:** 6.0
 - **Average words per claim:** 5.3
 
-## Properties That Make the Task Challenging
+## Example Input/Output Pair
 
-### 1. Oppositional Structure
+**Input:**
 
-- All queries require exactly 2 oppositional claims (pro/con)
-- Claims must be directly opposing viewpoints on the same topic
+Given the query and associated documents, produce a multi-perspective summary that adheres to these standards:
+- Generate exactly two oppositional claims (pro/con)
+- Each claim must have multiple distinct, non-overlapping perspectives
+- Each perspective must be supported by at least one document ID
+- Perspectives should be concise, one-sentence summaries
 
-### 2. Multi-Perspective Requirement
+- **query:** "Surrealist Memes: Regression or Progression?"
 
-- Each claim must have multiple supporting perspectives (avg: 6.0 per query)
-- Perspectives must be distinct and non-overlapping
+- **docs:**
+  - `"205"`: "Surrealist memes find cultural forbears in the pre-internet art movements of Dadaism, Surrealism and Pop Art. Surrealist memes approach the absurdity of contemporary life in the same manner as Dadaism..."
+  - `"364"`: "A central criticism of surreal memes is that they don’t have any point, that they are devoid of any distinct message. To these critics, I (along with troves of surrealist memers) say, so what? Art nee..."
+  - `"1138"`: "The internet underground is famously proprietary about its memes. Imageboard website 4chan has long claimed ownership of the internet’s most popular memes, and its users regularly scorn sites like 9ga..."
+  - `"858"`: "The nihilism of surreal memes reveals their regressive nature. At its core, art is about evoking emotion and sharing our experiences of the world. Art writer Linda Weintraub writes “If art doesn’t sen..."
 
-### 3. Evidence Grounding
+Generate the JSON output now.
 
-- Each perspective must be supported by document IDs
-- Documents must be retrieved from a corpus of 4,107 evidence documents
-- Requires accurate retrieval and relevance matching
-
-### 4. Data Quality Challenges
-
-- 13 duplicate query strings (13 duplicate instances)
-- Requires handling of duplicate queries in evaluation
-
-## Example Input/Output Pairs
-
-### Example 1
-
-**Query:** Surrealist Memes: Regression or Progression?
+**Output:**
 
 **Claim 1:** Surrealist memes represent progression in meme art.
 
 **Perspectives (pro):**
-1. Surreal memes are derived from a varied line of modern art traditions.
-2. Surrealist memes represent progression in meme art because they demonstrate that no message is necessary for impactful art.
-
-**Supporting document IDs:** `[205, 364]`...
+1. Surreal memes are derived from a varied line of modern art traditions. (grounded by document `205`)
+2. Surrealist memes represent progression in meme art because they demonstrate that no message is necessary for impactful art. (grounded by document `364`)
 
 **Claim 2:** Surreal art is taking meme art back centuries (well, ok, decade).
 
 **Perspectives (con):**
-1. Surreal memes are internet elitism at its worst.
-2. The perspective that surreal art is taking meme art back centuries is supported by the idea that much of its nuance is "Lost in Translation."
-
-**Supporting document IDs:** `[1138, 858]`...
-
-### Example 2
-
-**Query:** Throwback TV: Friends or Seinfeld?
-
-**Claim 1:** Why Friends is better than Seinfeld
-
-**Perspectives (pro):**
-1. Friends is the epitome of a classic sitcom.
-2. The show's character development showed depth and heart, making Friends better than Seinfeld.
-
-**Supporting document IDs:** `[199, 482, 1197]`...
-
-**Claim 2:** Why Seinfeld is better than Friends
-
-**Perspectives (con):**
-1. Seinfeld is innovative.
-2. It redefined the use of characters.
-
-**Supporting document IDs:** `[867, 1094, 783]`...
+1. Surreal memes are internet elitism at its worst. (grounded by document `1138`)
+2. The perspective that surreal art is taking meme art back centuries is supported by the idea that much of its nuance is "Lost in Translation." (grounded by document `858`)

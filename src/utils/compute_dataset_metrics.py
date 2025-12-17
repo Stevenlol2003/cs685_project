@@ -117,57 +117,61 @@ def main():
     write(f"- **Average words per claim:** {avg_words_per_claim:.1f}")
     write()
     
-    # Properties That Make the Task Challenging
-    write("## Properties That Make the Task Challenging")
-    write()
-    write("### 1. Oppositional Structure")
-    write()
-    write("- All queries require exactly 2 oppositional claims (pro/con)")
-    write("- Claims must be directly opposing viewpoints on the same topic")
-    write()
-    write("### 2. Multi-Perspective Requirement")
-    write()
-    write(f"- Each claim must have multiple supporting perspectives (avg: {avg_perspectives_per_query:.1f} per query)")
-    write("- Perspectives must be distinct and non-overlapping")
-    write()
-    write("### 3. Evidence Grounding")
-    write()
-    write("- Each perspective must be supported by document IDs")
-    write("- Documents must be retrieved from a corpus of 4,107 evidence documents")
-    write("- Requires accurate retrieval and relevance matching")
-    write()
-    write("### 4. Data Quality Challenges")
-    write()
-    write(f"- {num_duplicates} duplicate query strings ({num_queries - num_unique} duplicate instances)")
-    write("- Requires handling of duplicate queries in evaluation")
+    # Create document ID to content mapping
+    doc_dict = {doc["id"]: doc["content"] for doc in evidence}
+    
+    # Extract one example query
+    write("## Example Input/Output Pair")
     write()
     
-    # Extract 2 example queries
-    write("## Example Input/Output Pairs")
+    example = dataset[0]
+    query = example['query']
+    favor_ids = example['favor_ids']
+    against_ids = example['against_ids']
+    all_doc_ids = favor_ids + against_ids
+    
+    # Input section
+    write("**Input:**")
+    write()
+    write("Given the query and associated documents, produce a multi-perspective summary that adheres to these standards:")
+    write("- Generate exactly two oppositional claims (pro/con)")
+    write("- Each claim must have multiple distinct, non-overlapping perspectives")
+    write("- Each perspective must be supported by at least one document ID")
+    write("- Perspectives should be concise, one-sentence summaries")
+    write()
+    write(f"- **query:** \"{query}\"")
+    write()
+    write("- **docs:**")
+    for doc_id in all_doc_ids[:5]:  # Show first 5 documents
+        content = doc_dict.get(doc_id, "")
+        # Truncate long content for readability
+        if len(content) > 200:
+            content = content[:200] + "..."
+        write(f"  - `\"{doc_id}\"`: \"{content}\"")
+    if len(all_doc_ids) > 5:
+        write(f"  - ... (and {len(all_doc_ids) - 5} more documents)")
+    write()
+    write("Generate the JSON output now.")
     write()
     
-    for i, example in enumerate(dataset[:2], 1):
-        write(f"### Example {i}")
-        write()
-        write(f"**Query:** {example['query']}")
-        write()
-        write(f"**Claim 1:** {example['claims'][0]}")
-        write()
-        write("**Perspectives (pro):**")
-        for j, persp in enumerate(example['perspectives']['pro'][:2], 1):
-            write(f"{j}. {persp}")
-        write()
-        write(f"**Supporting document IDs:** `{example['favor_ids'][:3]}`...")
-        write()
-        
-        write(f"**Claim 2:** {example['claims'][1]}")
-        write()
-        write("**Perspectives (con):**")
-        for j, persp in enumerate(example['perspectives']['con'][:2], 1):
-            write(f"{j}. {persp}")
-        write()
-        write(f"**Supporting document IDs:** `{example['against_ids'][:3]}`...")
-        write()
+    # Output section
+    write("**Output:**")
+    write()
+    write(f"**Claim 1:** {example['claims'][0]}")
+    write()
+    write("**Perspectives (pro):**")
+    pro_perspectives = example['perspectives']['pro']
+    for j, (persp, doc_id) in enumerate(zip(pro_perspectives, favor_ids), 1):
+        write(f"{j}. {persp} (grounded by document `{doc_id}`)")
+    write()
+    
+    write(f"**Claim 2:** {example['claims'][1]}")
+    write()
+    write("**Perspectives (con):**")
+    con_perspectives = example['perspectives']['con']
+    for j, (persp, doc_id) in enumerate(zip(con_perspectives, against_ids), 1):
+        write(f"{j}. {persp} (grounded by document `{doc_id}`)")
+    write()
     
     # Write to file
     with open(output_file, 'w', encoding='utf-8') as f:
