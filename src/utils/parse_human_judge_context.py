@@ -117,6 +117,7 @@ def generate_html(queries_data: List[Dict], output_path: str):
         .web-doc { margin: 4px 0; padding: 6px; background: white; border-radius: 2px; border-left: 2px solid #FF9800; }
         .doc-content { margin-top: 4px; padding: 4px; background: #fafafa; border-radius: 2px; font-size: 11px; color: #555; }
         .warning { padding: 5px 8px; background: #ffebee; border-left: 2px solid #f44336; margin: 5px 0; color: #c62828; font-size: 12px; }
+        .query-ids { margin: 4px 0 8px 10px; font-size: 11px; color: #888; }
         a { color: #2196F3; word-break: break-all; }
         em { color: #888; font-size: 11px; }
     </style>
@@ -177,7 +178,16 @@ def generate_html(queries_data: List[Dict], output_path: str):
     
     for i, q in enumerate(queries_data, 1):
         query = q.get("query", "")
+        id_offline = q.get("id_offline", "")
+        id_merged = q.get("id_merged", "")
         html.append(f'<div class="query-section" id="query-{i}"><h2>{i}. {query}</h2>')
+        if id_offline or id_merged:
+            ids_text = []
+            if id_offline:
+                ids_text.append(f'ID Offline: {id_offline}')
+            if id_merged:
+                ids_text.append(f'ID Merged: {id_merged}')
+            html.append(f'<div class="query-ids">{" | ".join(ids_text)}</div>')
         
         gold_ref = get_gold_reference(query, gold_file)
         html.append(format_claims(gold_ref, "Gold Reference", "gold-ref") if gold_ref else '<div class="warning">⚠️ Gold reference not found.</div>')
