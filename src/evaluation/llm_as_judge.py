@@ -68,10 +68,11 @@ def get_gold_reference_by_query(query: str, gold_file_path: str = "data/thepersp
                     
                     # First claim (t1) with perspectives from response1
                     claim1_perspectives = []
-                    for point_text in item.get("response1", []):
+                    favor_ids = item.get("favor_ids", [])
+                    for i, point_text in enumerate(item.get("response1", [])):
                         claim1_perspectives.append({
                             "text": point_text,
-                            "evidence_docs": item.get("favor_ids", [])
+                            "evidence_docs": [favor_ids[i]] if i < len(favor_ids) else []
                         })
                     gold_summary.append({
                         "claim": item.get("t1", ""),
@@ -80,10 +81,11 @@ def get_gold_reference_by_query(query: str, gold_file_path: str = "data/thepersp
                     
                     # Second claim (t2) with perspectives from response2
                     claim2_perspectives = []
-                    for point_text in item.get("response2", []):
+                    against_ids = item.get("against_ids", [])
+                    for i, point_text in enumerate(item.get("response2", [])):
                         claim2_perspectives.append({
                             "text": point_text,
-                            "evidence_docs": item.get("against_ids", [])
+                            "evidence_docs": [against_ids[i]] if i < len(against_ids) else []
                         })
                     gold_summary.append({
                         "claim": item.get("t2", ""),
@@ -307,7 +309,7 @@ INSTRUCTIONS:
                 {"role": "user", "content": prompt}
             ],
             text_format=EvaluationResponse,
-	    reasoning={"effort": "low"}
+	    reasoning={"effort": "minimal"}
         )
         
         # Check for refusal (Structured Outputs feature)
